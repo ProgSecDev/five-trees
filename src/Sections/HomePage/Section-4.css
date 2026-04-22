@@ -1,0 +1,262 @@
+/* Sections/HomePage/Section-4.css */
+.section-four {
+  width: 100%;
+  padding: 30px 40px 46px;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin-top: 3rem;
+}
+
+.section-four__container {
+  max-width: 1520px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 58% 42%;
+  column-gap: 54px;
+  align-items: start;
+}
+
+.section-four__left {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  column-gap: 28px;
+  align-items: start;
+}
+
+.section-four__side-title {
+  width: 92px;
+  min-height: 742px;
+  background: #6a7f28;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 22px;
+  box-sizing: border-box;
+}
+
+.section-four__side-title span {
+  color: #f4efd8;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.section-four__content {
+  padding-top: 10px;
+  max-width: 770px;
+}
+
+.section-four__block + .section-four__block {
+  margin-top: 72px;
+}
+
+.section-four__heading {
+  margin: 0 0 12px;
+  color: #bfd15f;
+  font-size: 2.18rem;
+  line-height: 1.04;
+  font-weight: 900;
+  letter-spacing: -0.4px;
+  text-transform: none;
+}
+
+.section-four__block:last-child .section-four__heading {
+  text-transform: uppercase;
+}
+
+.section-four__text {
+  margin: 0;
+  max-width: 760px;
+  color: #5f712a;
+  font-size: 1.5rem;
+  line-height: 1.28;
+  font-weight: 500;
+}
+
+.section-four__right {
+  position: relative;
+  min-height: 742px;
+}
+
+.section-four__image-stack {
+  position: relative;
+  width: 100%;
+  height: 742px;
+}
+
+.section-four__slice {
+  position: absolute;
+  overflow: hidden;
+  background: transparent;
+}
+
+.section-four__slice--top {
+  top: 10px;
+  right: 30px;
+  width: 630px;
+  height: 210px;
+}
+
+.section-four__slice--middle {
+  top: 244px;
+  right: 80px;
+  width: 630px;
+  height: 210px;
+}
+
+.section-four__slice--bottom {
+  top: 480px;
+  right: 120px;
+  width: 630px;
+  height: 210px;
+}
+
+.section-four__image {
+  display: block;
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.section-four__slice--top .section-four__image {
+  transform: translateY(0);
+}
+
+.section-four__slice--middle .section-four__image {
+  transform: translateY(-234px);
+}
+
+.section-four__slice--bottom .section-four__image {
+  transform: translateY(-478px);
+}
+
+@media (max-width: 1380px) {
+  .section-four {
+    padding: 28px 24px 44px;
+  }
+
+  .section-four__container {
+    grid-template-columns: 1fr;
+    row-gap: 34px;
+  }
+
+  .section-four__left {
+    grid-template-columns: 82px 1fr;
+  }
+
+  .section-four__side-title {
+    width: 82px;
+    min-height: 640px;
+  }
+
+  .section-four__right {
+    min-height: 720px;
+  }
+
+  .section-four__image-stack {
+    max-width: 760px;
+    height: 720px;
+    margin: 0 auto;
+  }
+
+  .section-four__slice--top {
+    right: 0;
+    width: 560px;
+  }
+
+  .section-four__slice--middle {
+    right: 92px;
+    width: 648px;
+  }
+
+  .section-four__slice--bottom {
+    right: 118px;
+    width: 560px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-four {
+    padding: 24px 16px 36px;
+  }
+
+  .section-four__left {
+    grid-template-columns: 62px 1fr;
+    column-gap: 16px;
+  }
+
+  .section-four__side-title {
+    width: 62px;
+    min-height: 100%;
+    padding-top: 14px;
+  }
+
+  .section-four__side-title span {
+    font-size: 0.86rem;
+  }
+
+  .section-four__content {
+    max-width: 100%;
+    padding-top: 0;
+  }
+
+  .section-four__block + .section-four__block {
+    margin-top: 40px;
+  }
+
+  .section-four__heading {
+    font-size: 1.7rem;
+    line-height: 1.08;
+  }
+
+  .section-four__text {
+    font-size: 0.98rem;
+    line-height: 1.42;
+  }
+
+  .section-four__right {
+    min-height: 520px;
+  }
+
+  .section-four__image-stack {
+    height: 520px;
+  }
+
+  .section-four__slice--top {
+    top: 0;
+    right: 0;
+    width: 84%;
+    height: 140px;
+  }
+
+  .section-four__slice--middle {
+    top: 160px;
+    right: 18px;
+    width: 92%;
+    height: 140px;
+  }
+
+  .section-four__slice--bottom {
+    top: 320px;
+    right: 36px;
+    width: 84%;
+    height: 140px;
+  }
+
+  .section-four__image {
+    height: 450px;
+  }
+
+  .section-four__slice--middle .section-four__image {
+    transform: translateY(-160px);
+  }
+
+  .section-four__slice--bottom .section-four__image {
+    transform: translateY(-320px);
+  }
+}

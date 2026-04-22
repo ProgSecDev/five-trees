@@ -1,11 +1,9 @@
 // src/components/nav.js
 import React, { useState } from "react";
-import { scroller } from "react-scroll";
 import { useNavigate, useLocation } from "react-router-dom";
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -13,35 +11,36 @@ function Nav() {
     setIsMenuOpen((prev) => !prev);
   };
 
-  const scrollToSection = (section) => {
-    scroller.scrollTo(section, {
-      duration: 700,
-      delay: 0,
-      smooth: "easeInOutQuart",
-      offset: -80,
-    });
+  const goToPage = (path) => {
+    navigate(path);
     setIsMenuOpen(false);
   };
 
-  const goToSection = (section) => {
-    if (location.pathname === "/") {
-      scrollToSection(section);
-      return;
-    }
+  const navItems = [
+    { label: "Home", path: "/" },
+    { label: "About Us", path: "/about" },
+    { label: "Product", path: "/product" },
+    { label: "Media", path: "/media" },
+    { label: "Contact Us", path: "/contact" },
+  ];
 
-    navigate("/");
-    setTimeout(() => {
-      scrollToSection(section);
-    }, 250);
+  const getDesktopItemClassName = (path) => {
+    const isActive = location.pathname === path;
+
+    return [
+      "text-[15px] font-semibold tracking-wide transition-colors duration-200",
+      isActive ? "text-[#1f3b63]" : "text-gray-600 hover:text-[#1f3b63]",
+    ].join(" ");
   };
 
-  const navItems = [
-    { label: "Home", action: () => goToSection("home") },
-    { label: "About Us", action: () => goToSection("story") },
-    { label: "Product", action: () => goToSection("product") },
-    { label: "Media", action: () => goToSection("media") },
-    { label: "Contact Us", action: () => goToSection("footer") },
-  ];
+  const getMobileItemClassName = (path) => {
+    const isActive = location.pathname === path;
+
+    return [
+      "border-b border-gray-100 py-3 text-left text-sm font-semibold tracking-wide last:border-b-0",
+      isActive ? "text-[#1f3b63]" : "text-gray-700 hover:text-[#1f3b63]",
+    ].join(" ");
+  };
 
   return (
     <nav className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm">
@@ -81,8 +80,8 @@ function Nav() {
             <button
               key={item.label}
               type="button"
-              onClick={item.action}
-              className="text-[15px] font-semibold tracking-wide text-gray-600 transition-colors duration-200 hover:text-[#1f3b63]"
+              onClick={() => goToPage(item.path)}
+              className={getDesktopItemClassName(item.path)}
             >
               {item.label}
             </button>
@@ -97,8 +96,8 @@ function Nav() {
               <button
                 key={item.label}
                 type="button"
-                onClick={item.action}
-                className="border-b border-gray-100 py-3 text-left text-sm font-semibold tracking-wide text-gray-700 last:border-b-0 hover:text-[#1f3b63]"
+                onClick={() => goToPage(item.path)}
+                className={getMobileItemClassName(item.path)}
               >
                 {item.label}
               </button>

@@ -1,0 +1,244 @@
+/* Sections/HomePage/Section-5.css */
+.section-five {
+  width: 100%;
+  background: #fff;
+  padding: 54px 32px 44px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.section-five__container {
+  max-width: 1520px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 110px 1fr 110px;
+  align-items: center;
+  column-gap: 18px;
+}
+
+.section-five__cards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 78px;
+  min-height: 620px;
+}
+
+.section-five__card {
+  position: relative;
+  border-radius: 38px;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  overflow: visible;
+  transition: all 0.25s ease;
+}
+
+.section-five__card--left,
+.section-five__card--right {
+  width: 300px;
+  height: 478px;
+  margin-top: 78px;
+}
+
+.section-five__card--center {
+  width: 352px;
+  height: 554px;
+  margin-top: 0;
+  background: #657f2b;
+}
+
+.section-five__image-wrap {
+  width: calc(100% - 28px);
+  margin: 18px auto 0;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.section-five__card--left .section-five__image-wrap,
+.section-five__card--right .section-five__image-wrap {
+  height: 270px;
+}
+
+.section-five__card--center .section-five__image-wrap {
+  height: 294px;
+}
+
+.section-five__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 30px;
+}
+
+.section-five__label {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  width: 82%;
+  background: #f4f4f1;
+  border-radius: 38px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 26px 22px;
+  box-sizing: border-box;
+}
+
+.section-five__card--left .section-five__label,
+.section-five__card--right .section-five__label {
+  min-height: 192px;
+}
+
+.section-five__card--center .section-five__label {
+  min-height: 200px;
+  width: 80%;
+}
+
+.section-five__title {
+  margin: 0;
+  color: #5f7429;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.section-five__card--center .section-five__title {
+  font-size: 1.1rem;
+}
+
+.section-five__arrow {
+  width: 72px;
+  height: 72px;
+  border: 3px solid #657f2b;
+  border-radius: 50%;
+  background: transparent;
+  color: #657f2b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin: 0 auto;
+}
+
+.section-five__arrow:hover {
+  transform: scale(1.04);
+}
+
+.section-five__arrow span {
+  font-size: 2.3rem;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.section-five__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.section-five__dot {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #657f2b;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.section-five__dot--active {
+  background: #657f2b;
+}
+
+@media (max-width: 1200px) {
+  .section-five__container {
+    grid-template-columns: 84px 1fr 84px;
+  }
+
+  .section-five__cards {
+    gap: 34px;
+  }
+
+  .section-five__card--left,
+  .section-five__card--right {
+    width: 250px;
+    height: 430px;
+    margin-top: 58px;
+  }
+
+  .section-five__card--center {
+    width: 300px;
+    height: 500px;
+  }
+
+  .section-five__card--left .section-five__image-wrap,
+  .section-five__card--right .section-five__image-wrap {
+    height: 230px;
+  }
+
+  .section-five__card--center .section-five__image-wrap {
+    height: 260px;
+  }
+
+  .section-five__label {
+    min-height: 165px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-five {
+    padding: 40px 16px 36px;
+  }
+
+  .section-five__container {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  .section-five__cards {
+    gap: 18px;
+    min-height: auto;
+  }
+
+  .section-five__card--left,
+  .section-five__card--right {
+    display: none;
+  }
+
+  .section-five__card--center {
+    width: 320px;
+    max-width: 100%;
+    height: 510px;
+    margin: 0 auto;
+  }
+
+  .section-five__arrow {
+    width: 64px;
+    height: 64px;
+  }
+
+  .section-five__arrow--left {
+    order: 2;
+    justify-self: start;
+  }
+
+  .section-five__arrow--right {
+    order: 3;
+    justify-self: end;
+    margin-top: -88px;
+  }
+
+  .section-five__cards {
+    order: 1;
+  }
+}

@@ -1,0 +1,157 @@
+/* Sections/HomePage/Section3.css */
+.section-three {
+  width: 100%;
+  padding: 48px 24px 70px;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.section-three__container {
+  max-width: 1410px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  align-items: start;
+}
+
+.section-three__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-three__icon-wrap {
+  margin-bottom: 10px;
+}
+
+.section-three__icon-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.section-three__icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  display: block;
+}
+
+.section-three__title {
+  margin: 0 0 12px;
+  color: #68792e;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.section-three__card {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background: #d9d9d9;
+}
+
+.section-three__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-three__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 26px 28px;
+  box-sizing: border-box;
+}
+
+.section-three__text {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.1rem;
+  line-height: 1.35;
+  font-weight: 800;
+  max-width: 95%;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 1200px) {
+  .section-three__container {
+    gap: 20px;
+  }
+
+  .section-three__title {
+    font-size: 1.7rem;
+  }
+
+  .section-three__card {
+    height: 210px;
+  }
+
+  .section-three__text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-three__container {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+  }
+
+  .section-three__item {
+    width: 100%;
+  }
+
+  .section-three__card {
+    height: 260px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-three {
+    padding: 36px 16px 50px;
+  }
+
+.section-three__icon-circle {
+    width: 110px;
+    height: 110px;
+  }
+
+  .section-three__icon {
+    width: 78px;
+    height: 78px;
+  }
+
+  .section-three__title {
+    font-size: 1.5rem;
+  }
+
+  .section-three__card {
+    height: 220px;
+  }
+
+  .section-three__overlay {
+    padding: 20px;
+  }
+
+  .section-three__text {
+    font-size: 0.98rem;
+    line-height: 1.32;
+  }
+}

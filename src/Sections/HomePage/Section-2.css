@@ -1,0 +1,129 @@
+.section-two {
+  width: 100%;
+  background: #fff;
+  padding: 18px 0 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.section-two__image-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 1520px;
+  margin: 0 auto;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.section-two__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.section-two__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 0 36px;
+  box-sizing: border-box;
+}
+
+.section-two__title-bar {
+  width: 78%;
+  min-height: 185px;
+  background: rgba(145, 145, 145, 0.42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 40px;
+  box-sizing: border-box;
+}
+
+.section-two__title {
+  margin: 0;
+  max-width: 980px;
+  color: #f2e8c4;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.05rem;
+  line-height: 1.06;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.section-two__content {
+  width: 100%;
+  max-width: 1180px;
+  margin-top: 18px;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.section-two__description {
+  margin: 0;
+  color: #5d6e2d;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 1200px) {
+  .section-two__overlay {
+    padding-bottom: 28px;
+  }
+
+  .section-two__title-bar {
+    width: 84%;
+    min-height: 150px;
+    padding: 20px 28px;
+  }
+
+  .section-two__title {
+    font-size: 1.7rem;
+  }
+
+  .section-two__content {
+    max-width: 980px;
+  }
+
+  .section-two__description {
+    font-size: 0.96rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-two {
+    padding: 10px 0 30px;
+  }
+
+  .section-two__overlay {
+    padding-bottom: 16px;
+  }
+
+  .section-two__title-bar {
+    width: 88%;
+    min-height: 100px;
+    padding: 14px 18px;
+  }
+
+  .section-two__title {
+    font-size: 1.1rem;
+    line-height: 1.15;
+  }
+
+  .section-two__content {
+    max-width: 100%;
+    margin-top: 12px;
+    padding: 0 16px;
+  }
+
+  .section-two__description {
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+}
