@@ -1,160 +1,111 @@
-import React, { useState, useEffect } from "react";
+// src/components/nav.js
+import React, { useState } from "react";
 import { scroller } from "react-scroll";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import logo from "../assets/Logos and Favicons/logo.png";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [navbarBg, setNavbarBg] = useState("#C5713A");
-  const [textColor, setTextColor] = useState("text-white");
-  const [textFont, setTextFont] = useState("text-3xl");
-  const [logoSize, setLogoSize] = useState("h-40");
-  const [isScreenMinimized, setIsScreenMinimized] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-  const changeNavbarBg = () => {
-    if (window.scrollY >= 50) {
-      setNavbarBg("rgba(197, 113, 58, 0.5)");
-      setTextColor("text-white");
-      setTextFont("text-1xl");
-      setLogoSize("h-32");
-    } else {
-      setNavbarBg("#C5713A");
-      setTextColor("text-white");
-      setTextFont("text-2xl");
-      setLogoSize("h-40");
-    }
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
   };
-
-  const handleResize = () => setIsScreenMinimized(window.innerWidth <= 768);
-
-  useEffect(() => {
-    window.addEventListener("scroll", changeNavbarBg);
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener("scroll", changeNavbarBg);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const scrollToSection = (section) => {
     scroller.scrollTo(section, {
-      duration: 1000,
+      duration: 700,
       delay: 0,
       smooth: "easeInOutQuart",
+      offset: -80,
     });
     setIsMenuOpen(false);
   };
 
-  const handlePrivateLabelClick = () => {
-  if (location.pathname === "/" || location.pathname === "/spicy") {
-    scrollToSection("labels");
-  } else {
+  const goToSection = (section) => {
+    if (location.pathname === "/") {
+      scrollToSection(section);
+      return;
+    }
+
     navigate("/");
     setTimeout(() => {
-      scrollToSection("labels");
-    }, 300);
-  }
-};
+      scrollToSection(section);
+    }, 250);
+  };
+
+  const navItems = [
+    { label: "Home", action: () => goToSection("home") },
+    { label: "About Us", action: () => goToSection("story") },
+    { label: "Product", action: () => goToSection("product") },
+    { label: "Media", action: () => goToSection("media") },
+    { label: "Contact Us", action: () => goToSection("footer") },
+  ];
 
   return (
-    <nav
-      className={`navbar p-4 ${textColor} fixed top-0 w-full z-30 transition-colors duration-500 ease-in-out`}
-      style={{ backgroundColor: navbarBg }}
-    >
-      <div
-        className="container mx-auto flex flex-col lg:flex-row justify-between items-center relative"
-        style={{ fontFamily: "Bookman Old Style, serif", fontWeight: 100 }}
-      >
-        <div className="lg:hidden">
-          <button
-            className="text-white focus:outline-none"
-            onClick={toggleMenu}
+    <nav className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm">
+      <div className="flex h-16 w-full items-center justify-end px-0">
+        <button
+          type="button"
+          onClick={toggleMenu}
+          className="mr-4 inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 lg:hidden"
+          aria-label="Toggle navigation"
+          aria-expanded={isMenuOpen}
+        >
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            {isMenuOpen ? (
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              ></path>
-            </svg>
-          </button>
-        </div>
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
 
-        <div
-          className={`lg:flex lg:space-x-8 lg:mt-0 mt-4 flex flex-col lg:flex-row items-center ${textFont} ${
-            isMenuOpen ? "block" : "hidden"
-          } lg:block lg:justify-center w-full nav-text`}
-        >
-          <div
-            className="px-4 py-2 hover:text-orange-200 cursor-pointer"
-            onClick={() => scrollToSection("home")}
-          >
-            Home
-          </div>
-          <div
-            className="px-4 py-2 hover:text-orange-200 cursor-pointer"
-            onClick={() => scrollToSection("story")}
-          >
-            About us
-          </div>
-
-          <div className="relative group px-4 py-2 cursor-pointer">
-            <div
-              className="hover:text-orange-200 whitespace-nowrap"
-              onClick={() => scrollToSection("product")}
+        <div className="hidden lg:flex lg:items-center lg:justify-end lg:gap-10 lg:pr-3 xl:pr-4">
+          {navItems.map((item) => (
+            <button
+              key={item.label}
+              type="button"
+              onClick={item.action}
+              className="text-[15px] font-semibold tracking-wide text-gray-600 transition-colors duration-200 hover:text-[#1f3b63]"
             >
-              Products
-            </div>
-            <div className="absolute hidden group-hover:block mt-2 bg-[#6F6D39] text-white shadow-md rounded-md whitespace-nowrap">
-              {/*<div className="px-4 py-2 hover:bg-[#C5713A] cursor-pointer" onClick={() => scrollToSection("grill")}>Grill Master</div>*/}
-              {/*<div className="px-4 py-2 hover:bg-[#C5713A] cursor-pointer" onClick={() => scrollToSection("spicy")}>Spicy Food</div>*/}
-            </div>
-          </div>
-        </div>
-
-        {!isScreenMinimized && (
-          <div className="absolute left-1/2 transform -translate-x-1/2 mx-1">
-            <img
-              src={logo}
-              alt="Logo"
-              className={`nav-logo ${logoSize} transition duration-300 ease-in-out hidden`}
-            />
-          </div>
-        )}
-
-        <div
-          className={`lg:flex lg:space-x-8 lg:mt-0 mt-4 flex flex-col lg:flex-row items-center ${textFont} ${
-            isMenuOpen ? "block" : "hidden"
-          } lg:block lg:justify-center w-full nav-text`}
-        >
-          <div
-            className="px-4 py-2 hover:text-orange-200 cursor-pointer"
-            onClick={handlePrivateLabelClick}
-          >
-            Private Labels
-          </div>
-          <div
-            className="px-4 py-2 hover:text-orange-200 cursor-pointer"
-            onClick={() => scrollToSection("footer")}
-          >
-            Contact Us
-          </div>
+              {item.label}
+            </button>
+          ))}
         </div>
       </div>
+
+      {isMenuOpen && (
+        <div className="border-t border-gray-200 bg-white lg:hidden">
+          <div className="flex flex-col px-4 py-3">
+            {navItems.map((item) => (
+              <button
+                key={item.label}
+                type="button"
+                onClick={item.action}
+                className="border-b border-gray-100 py-3 text-left text-sm font-semibold tracking-wide text-gray-700 last:border-b-0 hover:text-[#1f3b63]"
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
