@@ -12,10 +12,6 @@ const FiveTreesPage = () => {
         <Home />
       </Element>
 
-      <Element name="about">
-        <About />
-      </Element>
-
       <Element name="footer">
         <Footer />
       </Element>
