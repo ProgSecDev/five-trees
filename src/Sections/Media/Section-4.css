@@ -1,0 +1,33 @@
+.section-4 {
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.section-4__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.section-4__item {
+  width: 100%;
+}
+
+.section-4__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .section-4 {
+    padding: 20px;
+  }
+
+  .section-4__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

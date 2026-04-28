@@ -25,7 +25,7 @@ export default function HomeHeader({
     <header
       className="home-header"
       style={{
-        backgroundImage: `linear-gradient(rgba(255,255,255,0.18), rgba(255,255,255,0.18)), url(${backgroundImage})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(${backgroundImage})`,
       }}
     >
       <div className="home-header__overlay">

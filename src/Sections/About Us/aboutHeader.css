@@ -6,7 +6,7 @@
 
 .about-header__hero {
   position: relative;
-  min-height: 535px;
+  min-height: 730px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -57,6 +57,7 @@
   gap: 34px;
   text-align: center;
   padding: 80px 20px 40px;
+  margin-top: 130px;
 }
 
 .about-header__title {

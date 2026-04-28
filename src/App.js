@@ -4,10 +4,11 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from "react-route
 
 import Nav from "./Components/Nav";
 import "./App.css";
-import Recipes from "./Screens/Recipes";
 import FiveTreesPage from "./Sections/FiveTreesPage";
 import AboutUs from "./Sections/About Us/AboutUs";
 import Products from "./Sections/Products/Products";
+import Media from "./Sections/Media/Media";
+import ContactUs from "./Sections/Contact Us/ContactUs";
 
 const AppContent = () => {
   const location = useLocation();
@@ -21,7 +22,8 @@ const AppContent = () => {
         <Route path="/fivetreespage" element={<FiveTreesPage />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/product" element={<Products />} />
-        <Route path="/recipes" element={<Recipes />} />
+        <Route path="/media" element={<Media />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
     </>
   );
@@ -29,7 +31,7 @@ const AppContent = () => {
 
 const App = () => {
   return (
-    <Router basename="/">
+    <Router basename="/five-trees">
       <AppContent />
     </Router>
   );
