@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import "./productHeader.css";
 import productsPageHeader from "../../assets/ProductsPage/productsPageHeader.png";
 import mintHerb from "../../assets/ProductsPage/green-herb-img.png";
@@ -26,16 +25,13 @@ export default function ProductHeader() {
         <header className="hero-header">
           <nav className="hero-nav" aria-label="Products page navigation">
             {navItems.map((item) => (
-              <NavLink
+              <span
                 key={item.path}
-                to={item.path}
-                end={item.path === "/"}
-                className={({ isActive }) =>
-                  `hero-nav-link${isActive ? " active" : ""}`
-                }
+                className={`hero-nav-link${item.path === "/product" ? " active" : ""}`}
+                aria-disabled="true"
               >
                 {item.label}
-              </NavLink>
+              </span>
             ))}
           </nav>
         </header>
@@ -43,9 +39,9 @@ export default function ProductHeader() {
         <main className="hero-content">
           <h1 className="hero-title">THE ART OF HALLOUMI</h1>
 
-          <button type="button" className="hero-button">
+          {/* <button type="button" className="hero-button">
             SHOP NOW
-          </button>
+          </button> */}
         </main>
 
         <img

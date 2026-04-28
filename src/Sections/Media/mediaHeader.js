@@ -1,12 +1,9 @@
 // src/Sections/HomePage/homeHeader.js
 import React from "react";
-import { NavLink } from "react-router-dom";
 import "./mediaHeader.css";
 import homeHeaderBG from "../../assets/HomePage/homeHeaderBG.png";
 
-export default function MediaHeader({
-  backgroundImage = homeHeaderBG
-}) {
+export default function MediaHeader({ backgroundImage = homeHeaderBG }) {
   const navItems = [
     { label: "HOME", path: "/" },
     { label: "ABOUT US", path: "/about" },
@@ -25,16 +22,13 @@ export default function MediaHeader({
       <div className="media-header__overlay">
         <nav className="media-header__nav" aria-label="Home page navigation">
           {navItems.map((item) => (
-            <NavLink
+            <span
               key={item.path}
-              to={item.path}
-              end={item.path === "/"}
-              className={({ isActive }) =>
-                `media-header__nav-link${isActive ? " is-active" : ""}`
-              }
+              className={`media-header__nav-link${item.path === "/media" ? " is-active" : ""}`}
+              aria-disabled="true"
             >
               {item.label}
-            </NavLink>
+            </span>
           ))}
         </nav>
       </div>

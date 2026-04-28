@@ -23,15 +23,13 @@ export default function AboutHeader() {
 
         <nav className="about-header__nav" aria-label="About page navigation">
           {navItems.map((item) => (
-            <NavLink
+            <span
               key={item.path}
-              to={item.path}
-              className={({ isActive }) =>
-                `about-header__nav-link${isActive ? " is-active" : ""}`
-              }
+              className={`about-header__nav-link${item.path === "/about" ? " is-active" : ""}`}
+              aria-disabled="true"
             >
               {item.label}
-            </NavLink>
+            </span>
           ))}
         </nav>
 

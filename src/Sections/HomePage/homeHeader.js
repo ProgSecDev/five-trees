@@ -31,16 +31,13 @@ export default function HomeHeader({
       <div className="home-header__overlay">
         <nav className="home-header__nav" aria-label="Home page navigation">
           {navItems.map((item) => (
-            <NavLink
+            <span
               key={item.path}
-              to={item.path}
-              end={item.path === "/"}
-              className={({ isActive }) =>
-                `home-header__nav-link${isActive ? " is-active" : ""}`
-              }
+              className={`home-header__nav-link${item.path === "/" ? " is-active" : ""}`}
+              aria-disabled="true"
             >
               {item.label}
-            </NavLink>
+            </span>
           ))}
         </nav>
 
@@ -56,13 +53,9 @@ export default function HomeHeader({
           <h1 className="home-header__title">{companyName}</h1>
           <p className="home-header__subtitle">{subtitle}</p>
 
-          <button
-            type="button"
-            onClick={onButtonClick}
-            className="home-header__button"
-          >
+          <NavLink to="/product" className="home-header__button">
             {buttonText}
-          </button>
+          </NavLink>
         </div>
       </div>
     </header>

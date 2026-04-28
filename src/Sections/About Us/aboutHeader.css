@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700;800&display=swap");
+
 .about-header {
   width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #ffffff;
 }
 
@@ -39,7 +41,7 @@
   line-height: 1;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .about-header__nav-link.is-active {
@@ -58,37 +60,45 @@
   text-align: center;
   padding: 80px 20px 40px;
   margin-top: 130px;
+  -webkit-text-stroke: 0.1px #000;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
 }
 
 .about-header__title {
   margin: 0;
   color: #ffffff;
-  font-size: 74px;
+  font-size: 64px;
   font-weight: 800;
   line-height: 1;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  -webkit-text-stroke: 0.1px #000;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
 }
 
 .about-header__button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 260px;
-  height: 126px;
-  padding: 0 36px;
-  background: #5d7128;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 34px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.5px;
+  min-width: 330px;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 999px;
+  background-color: #5d7128;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 900;
   text-transform: uppercase;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  transition: opacity 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  margin-left: 5.5rem;
 }
 
 .about-header__button:hover {
@@ -115,7 +125,7 @@
   line-height: 1;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .about-header__about-text {
@@ -203,6 +213,7 @@
 
   .about-header__nav {
     gap: 28px;
+    display: none;
   }
 
   .about-header__nav-link {
@@ -229,6 +240,7 @@
     flex-wrap: wrap;
     gap: 18px;
     padding: 14px 18px;
+    display: none;
   }
 
   .about-header__title {

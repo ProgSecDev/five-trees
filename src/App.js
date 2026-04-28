@@ -9,12 +9,17 @@ import AboutUs from "./Sections/About Us/AboutUs";
 import Products from "./Sections/Products/Products";
 import Media from "./Sections/Media/Media";
 import ContactUs from "./Sections/Contact Us/ContactUs";
+import ScrollToTop from "../src/Components/ScrollToTop";
 
 const AppContent = () => {
   const location = useLocation();
 
+  
+
   return (
     <>
+
+    <ScrollToTop />
       {location.pathname !== "/recipes" && <Nav />}
 
       <Routes>

@@ -1,10 +1,12 @@
 /* Sections/HomePage/Section-5.css */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700;800&display=swap");
+
 .section-five {
   width: 100%;
   background: #fff;
   padding: 54px 32px 44px;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .section-five__container {
@@ -107,6 +109,7 @@
   font-weight: 800;
   text-decoration: underline;
   text-underline-offset: 3px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .section-five__card--center .section-five__title {
@@ -136,6 +139,7 @@
   font-size: 2.3rem;
   line-height: 1;
   font-weight: 400;
+  font-family: "Montserrat", sans-serif;
 }
 
 .section-five__dots {
@@ -162,7 +166,8 @@
 
 @media (max-width: 1200px) {
   .section-five__container {
-    grid-template-columns: 84px 1fr 84px;
+    grid-template-columns: 72px 1fr 72px;
+    column-gap: 14px;
   }
 
   .section-five__cards {
@@ -193,6 +198,23 @@
   .section-five__label {
     min-height: 165px;
   }
+
+  .section-five__arrow {
+    width: 58px;
+    height: 58px;
+  }
+
+  .section-five__arrow span {
+    font-size: 1.9rem;
+  }
+
+  .section-five__arrow--left,
+  .section-five__arrow--right {
+    justify-self: center;
+    align-self: center;
+    order: unset;
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 900px) {
@@ -201,13 +223,16 @@
   }
 
   .section-five__container {
-    grid-template-columns: 1fr;
-    row-gap: 24px;
+    grid-template-columns: 52px minmax(0, 1fr) 52px;
+    column-gap: 10px;
+    align-items: center;
   }
 
   .section-five__cards {
-    gap: 18px;
+    order: unset;
+    gap: 0;
     min-height: auto;
+    justify-content: center;
   }
 
   .section-five__card--left,
@@ -223,22 +248,53 @@
   }
 
   .section-five__arrow {
-    width: 64px;
-    height: 64px;
+    width: 52px;
+    height: 52px;
+    margin: 0;
   }
 
-  .section-five__arrow--left {
-    order: 2;
-    justify-self: start;
+  .section-five__arrow span {
+    font-size: 1.7rem;
   }
 
+  .section-five__arrow--left,
   .section-five__arrow--right {
-    order: 3;
-    justify-self: end;
-    margin-top: -88px;
+    justify-self: center;
+    align-self: center;
+    order: unset;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-five__container {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    column-gap: 8px;
   }
 
-  .section-five__cards {
-    order: 1;
+  .section-five__card--center {
+    width: 100%;
+    max-width: 290px;
+    height: 470px;
+  }
+
+  .section-five__arrow {
+    width: 44px;
+    height: 44px;
+    border-width: 2px;
+  }
+
+  .section-five__arrow span {
+    font-size: 1.4rem;
+  }
+
+  .section-five__dots {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .section-five__dot {
+    width: 16px;
+    height: 16px;
   }
 }

@@ -1,12 +1,13 @@
-/* src/Sections/HomePage/homeHeader.css */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700;800&display=swap");
+
 .media-header {
   width: 100%;
   min-height: 100vh;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  font-family: Arial, Helvetica, sans-serif;
   position: relative;
+  font-family: "Montserrat", sans-serif;
 }
 
 .media-header__overlay {
@@ -39,7 +40,7 @@
   line-height: 1;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .media-header__nav-link.is-active {
@@ -105,6 +106,13 @@
   line-height: 0.98;
   font-weight: 900;
   text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  -webkit-text-stroke: 0.1px #000;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
 }
 
 .media-header__subtitle {
@@ -114,6 +122,13 @@
   line-height: 1.05;
   font-weight: 800;
   text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  -webkit-text-stroke: 0.1px #000;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
 }
 
 .media-header__button {
@@ -126,6 +141,7 @@
   font-size: 2rem;
   font-weight: 900;
   text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   margin-left: 5.5rem;
@@ -138,6 +154,7 @@
 @media (max-width: 1200px) {
   .media-header__nav {
     gap: 28px;
+    display: none;
   }
 
   .media-header__nav-link {
@@ -168,6 +185,7 @@
     flex-wrap: wrap;
     gap: 18px;
     padding: 14px 18px;
+    display: none;
   }
 }
 

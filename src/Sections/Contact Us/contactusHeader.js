@@ -1,12 +1,11 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import "./contactusHeader.css";
 import contactHeroBg from "../../assets/Contact US/contactHeroBg.png";
 
 export default function ContactHeader({
   backgroundImage = contactHeroBg,
-  heading = "CONTACT US",
-  subheading = "WE’D LOVE TO TALK TO YOU",
+  heading = "WE’D LOVE TO TALK TO YOU",
+  // subheading = "WE’D LOVE TO TALK TO YOU",
 }) {
   const navItems = [
     { label: "HOME", path: "/" },
@@ -26,22 +25,19 @@ export default function ContactHeader({
       <div className="contact-hero__overlay">
         <nav className="contact-hero__nav" aria-label="Contact page navigation">
           {navItems.map((item) => (
-            <NavLink
+            <span
               key={item.path}
-              to={item.path}
-              end={item.path === "/"}
-              className={({ isActive }) =>
-                `contact-hero__nav-link${isActive ? " is-active" : ""}`
-              }
+              className={`contact-hero__nav-link${item.path === "/contact" ? " is-active" : ""}`}
+              aria-disabled="true"
             >
               {item.label}
-            </NavLink>
+            </span>
           ))}
         </nav>
 
         <div className="contact-hero__content">
-          <h2 className="contact-hero__heading">{heading}</h2>
-          <h1 className="contact-hero__subheading">{subheading}</h1>
+          <h1 className="contact-hero__heading">{heading}</h1>
+          {/* <h1 className="contact-hero__subheading">{subheading}</h1> */}
         </div>
       </div>
     </section>

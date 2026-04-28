@@ -28,7 +28,7 @@ function Nav() {
     const isActive = location.pathname === path;
 
     return [
-      "text-[15px] font-semibold tracking-wide transition-colors duration-200",
+      "text-[15px] font-extrabold uppercase tracking-[0.5px] transition-colors duration-200",
       isActive ? "text-[#1f3b63]" : "text-gray-600 hover:text-[#1f3b63]",
     ].join(" ");
   };
@@ -37,13 +37,13 @@ function Nav() {
     const isActive = location.pathname === path;
 
     return [
-      "border-b border-gray-100 py-3 text-left text-sm font-semibold tracking-wide last:border-b-0",
+      "border-b border-gray-100 py-3 text-left text-sm font-extrabold uppercase tracking-[0.5px] last:border-b-0",
       isActive ? "text-[#1f3b63]" : "text-gray-700 hover:text-[#1f3b63]",
     ].join(" ");
   };
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm">
+    <nav className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white font-['Montserrat'] shadow-sm">
       <div className="flex h-16 w-full items-center justify-end px-0">
         <button
           type="button"

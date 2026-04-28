@@ -1,11 +1,12 @@
-/* src/Sections/HomePage/homeHeader.css */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700;800&display=swap");
+
 .home-header {
   width: 100%;
   min-height: 100vh;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
   position: relative;
 }
 
@@ -15,7 +16,8 @@
   padding: 110px 70px 60px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 
@@ -39,7 +41,6 @@
   line-height: 1;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 .home-header__nav-link.is-active {
@@ -48,7 +49,9 @@
 
 .home-header__logo-wrap {
   width: fit-content;
-  position: relative;
+  position: absolute;
+  top: 65px;
+  left: 70px;
   z-index: 2;
 }
 
@@ -93,27 +96,45 @@
 
 .home-header__content {
   max-width: 780px;
-  padding-bottom: 70px;
+  width: 100%;
   position: relative;
   z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0;
 }
 
 .home-header__title {
   margin: 0;
-  color: #617224;
-  font-size: 2rem;
+  color: #ffffff;
+  font-size: 3rem;
   line-height: 0.98;
   font-weight: 900;
   text-transform: uppercase;
+  -webkit-text-stroke: 0.1px #000;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
 }
 
 .home-header__subtitle {
-  margin: 18px 5.5rem 34px;
-  color: #617224;
-  font-size: 1.5rem;
+  margin: 18px 0 34px;
+  color: #ffffff;
+  font-size: 2rem;
   line-height: 1.05;
   font-weight: 800;
   text-transform: uppercase;
+  -webkit-text-stroke: 0.1px #000;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
 }
 
 .home-header__button {
@@ -121,14 +142,17 @@
   padding: 20px 40px;
   border: none;
   border-radius: 999px;
-  background-color: #c2d76e;
+  background-color: #5d7128;
   color: #fff;
   font-size: 2rem;
   font-weight: 900;
   text-transform: uppercase;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  margin-left: 5.5rem;
+  margin-left: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .home-header__button:hover {
@@ -138,6 +162,7 @@
 @media (max-width: 1200px) {
   .home-header__nav {
     gap: 28px;
+    display: none;
   }
 
   .home-header__nav-link {
@@ -148,6 +173,11 @@
 @media (max-width: 1024px) {
   .home-header__overlay {
     padding: 100px 40px 50px;
+  }
+
+  .home-header__logo-wrap {
+    top: 60px;
+    left: 40px;
   }
 
   .home-header__title {
@@ -168,12 +198,18 @@
     flex-wrap: wrap;
     gap: 18px;
     padding: 14px 18px;
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
   .home-header__overlay {
     padding: 90px 20px 40px;
+  }
+
+  .home-header__logo-wrap {
+    top: 60px;
+    left: 20px;
   }
 
   .home-header__logo-image {
@@ -186,7 +222,6 @@
 
   .home-header__content {
     max-width: 100%;
-    padding-bottom: 30px;
   }
 
   .home-header__title {

@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700;800&display=swap");
+
 .contact-hero {
   width: 100%;
   min-height: 100vh;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
   position: relative;
 }
 
@@ -38,7 +40,7 @@
   line-height: 1;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .contact-hero__nav-link.is-active {
@@ -58,9 +60,15 @@
   color: #ffffff;
   font-size: 4.25rem;
   line-height: 1;
-  font-weight: 300;
+  font-weight: 800;
   text-transform: uppercase;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
+  -webkit-text-stroke: 0.1px #000;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
 }
 
 .contact-hero__subheading {
@@ -70,8 +78,14 @@
   line-height: 0.95;
   font-weight: 900;
   text-transform: uppercase;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
+  -webkit-text-stroke: 0.1px #000;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
 }
 
 @media (max-width: 1400px) {
@@ -87,6 +101,7 @@
 @media (max-width: 1200px) {
   .contact-hero__nav {
     gap: 28px;
+    display: none;
   }
 
   .contact-hero__nav-link {
@@ -125,6 +140,7 @@
     flex-wrap: wrap;
     gap: 18px;
     padding: 14px 18px;
+    display: none;
   }
 }
 
