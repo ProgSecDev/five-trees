@@ -1,11 +1,31 @@
-/* Sections/HomePage/Section3.css */
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700;800&display=swap");
+@font-face {
+  font-family: "SairaCondensedBold";
+  src: url("../../font/SairaCondensed-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Impact";
+  src: url("../../font/impact.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CanvaSansRegular";
+  src: url("../../font/canva-sans-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 .section-three {
   width: 100%;
   padding: 48px 24px 70px;
   background: #fff;
-  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
 }
 
@@ -54,14 +74,14 @@
   line-height: 1.05;
   font-weight: 900;
   letter-spacing: -0.5px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "SairaCondensedBold", sans-serif;
   text-transform: uppercase;
-  -webkit-text-stroke: 0.1px #000;
+  /* -webkit-text-stroke: 0.1px #000;
   text-shadow:
     -1px -1px 0 #000,
      1px -1px 0 #000,
     -1px  1px 0 #000,
-     1px  1px 0 #000;
+     1px  1px 0 #000; */
 }
 
 .section-three__card {
@@ -93,11 +113,11 @@
 .section-three__text {
   margin: 0;
   color: #ffffff;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   line-height: 1.35;
   font-weight: 800;
   max-width: 95%;
-  font-family: "Montserrat", sans-serif;
+  font-family: "CanvaSansRegular", sans-serif;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 

@@ -1,6 +1,7 @@
 // Sections/Footer/Footer.js
 import React from "react";
 import dessertPlate from "../../src/assets/Footer/footer-plate.png";
+import qrCode from "../../src/assets/Footer/QR-Code.png";
 
 function LocationIcon() {
   return (
@@ -137,16 +138,6 @@ function LinkedinIcon() {
   );
 }
 
-function FakeQr() {
-  return (
-    <div className="footer__qr" aria-hidden="true">
-      {Array.from({ length: 36 }).map((_, index) => (
-        <span key={index} className={`footer__qr-cell footer__qr-cell--${index % 5}`} />
-      ))}
-    </div>
-  );
-}
-
 function Footer() {
   const contactItems = [
     {
@@ -194,7 +185,11 @@ function Footer() {
             </div>
 
             <div className="footer__qr-wrap">
-              <FakeQr />
+              <img
+                src={qrCode}
+                alt="QR Code"
+                className="footer__qr-image"
+              />
             </div>
           </div>
 
@@ -217,14 +212,35 @@ function Footer() {
       </footer>
 
       <style>{`
-  @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700;800&display=swap");
+  @font-face {
+    font-family: "SairaCondensedBold";
+    src: url("../../font/SairaCondensed-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Impact";
+    src: url("../../font/impact.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "CanvaSansRegular";
+    src: url("../../font/canva-sans-regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
 
   .footer {
     width: 100%;
     background: #fff;
     padding: 32px 28px 26px;
     box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
   }
 
   .footer__container {
@@ -252,13 +268,7 @@ function Footer() {
     line-height: 1;
     font-weight: 900;
     text-transform: uppercase;
-    font-family: "Montserrat", sans-serif;
-    -webkit-text-stroke: 0.1px #000;
-    text-shadow:
-      -1px -1px 0 #000,
-       1px -1px 0 #000,
-      -1px  1px 0 #000,
-       1px  1px 0 #000;
+    font-family: "Impact", sans-serif;
   }
 
   .footer__contact-list {
@@ -303,43 +313,18 @@ function Footer() {
     justify-content: center;
   }
 
-  .footer__qr {
+  .footer__qr-image {
     width: 154px;
     height: 154px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 4px;
+    object-fit: contain;
+    display: block;
   }
 
-  .footer__qr-cell {
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.15);
-  }
-
-  .footer__qr-cell--0,
-  .footer__qr-cell--2,
-  .footer__qr-cell--4 {
-    background: #ffffff;
-  }
-
-  .footer__qr-cell:nth-child(1),
-  .footer__qr-cell:nth-child(2),
-  .footer__qr-cell:nth-child(7),
-  .footer__qr-cell:nth-child(8),
-  .footer__qr-cell:nth-child(5),
-  .footer__qr-cell:nth-child(6),
-  .footer__qr-cell:nth-child(11),
-  .footer__qr-cell:nth-child(12),
-  .footer__qr-cell:nth-child(25),
-  .footer__qr-cell:nth-child(26),
-  .footer__qr-cell:nth-child(31),
-  .footer__qr-cell:nth-child(32) {
-    background: #ffffff;
-  }
-
+  /* RIGHT PANEL — always relative so absolute plate is contained */
   .footer__right {
     position: relative;
     padding-top: 18px;
+    padding-bottom: 300px;
     min-height: 770px;
   }
 
@@ -350,13 +335,7 @@ function Footer() {
     line-height: 1;
     font-weight: 900;
     text-transform: uppercase;
-    font-family: "Montserrat", sans-serif;
-    -webkit-text-stroke: 0.1px #000;
-    text-shadow:
-      -1px -1px 0 #000,
-       1px -1px 0 #000,
-      -1px  1px 0 #000,
-       1px  1px 0 #000;
+    font-family: "SairaCondensedBold", sans-serif;
   }
 
   .footer__form {
@@ -400,15 +379,19 @@ function Footer() {
     padding-top: 36px;
   }
 
+  /* PLATE — absolute, oblique, desktop default */
   .footer__plate-image {
     position: absolute;
-    right: -24px;
+    right: -250px;
     bottom: 16px;
+    top: 140px;
     width: 620px;
-    max-width: 72%;
+    max-width: none;
     object-fit: contain;
     pointer-events: none;
-    filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.18));
+    filter: drop-shadow(0 20px 14px rgba(0, 0, 0, 0.18));
+    transform: rotate(-18deg);
+    transform-origin: bottom right;
   }
 
   @media (max-width: 1280px) {
@@ -431,8 +414,9 @@ function Footer() {
     }
 
     .footer__plate-image {
-      width: 520px;
-      right: -10px;
+      width: 500px;
+      right: -100px;
+      bottom: 16px;
     }
   }
 
@@ -447,8 +431,9 @@ function Footer() {
       min-height: auto;
     }
 
+    /* enough bottom space for the rotated plate to overlap the textarea */
     .footer__right {
-      padding-bottom: 220px;
+      padding-bottom: 200px;
     }
 
     .footer__form {
@@ -456,10 +441,10 @@ function Footer() {
     }
 
     .footer__plate-image {
-      right: 0;
-      bottom: 0;
-      width: 420px;
-      max-width: 78%;
+      width: 360px;
+      right: -80px;
+      bottom: 10px;
+      top: 340px;
     }
   }
 
@@ -481,6 +466,11 @@ function Footer() {
       font-size: 2.6rem;
     }
 
+    /* enough room for smaller rotated plate */
+    .footer__right {
+      padding-bottom: 160px;
+    }
+
     .footer__contact-item {
       grid-template-columns: 28px 1fr;
       gap: 14px;
@@ -492,19 +482,22 @@ function Footer() {
 
     .footer__input {
       height: 68px;
-      padding: 18px 18px;
+      padding: 18px;
       font-size: 0.95rem;
+    }
+
+    /* smaller plate, still absolute + rotated in bottom-right corner */
+    .footer__plate-image {
+      width: 240px;
+      right: -50px;
+      bottom: 10px;
+      top: 300px;
     }
 
     .footer__textarea {
       min-height: 240px;
       padding: 20px 18px;
       font-size: 0.95rem;
-    }
-
-    .footer__plate-image {
-      width: 320px;
-      max-width: 90%;
     }
   }
 `}</style>

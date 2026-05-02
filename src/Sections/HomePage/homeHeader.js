@@ -10,7 +10,7 @@ export default function HomeHeader({
   logoSrc = headerLogo,
   companyName = "FIVE TREES GLOBAL TRADING",
   subtitle = "YOUR TRUSTED SOURCE",
-  buttonText = "SHOP NOW",
+  buttonText = "View Products",
   onButtonClick,
 }) {
   const navItems = [
@@ -25,7 +25,7 @@ export default function HomeHeader({
     <header
       className="home-header"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(${backgroundImage})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(${backgroundImage})`,
       }}
     >
       <div className="home-header__overlay">

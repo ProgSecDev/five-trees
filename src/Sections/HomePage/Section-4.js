@@ -29,7 +29,7 @@ function Section4({
     </>
     },
     {
-      title: "QUALITY & CERTIFICATION",
+      title: "Quality & Certification",
       text: 
       <>
       Certified under IFS Food and FSSC 22000 <br /> 

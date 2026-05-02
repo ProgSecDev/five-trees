@@ -1,9 +1,9 @@
 // src/Sections/HomePage/homeHeader.js
 import React from "react";
 import "./mediaHeader.css";
-import homeHeaderBG from "../../assets/HomePage/homeHeaderBG.png";
+import mediaHeader from "../../assets/Media/media-header.png";
 
-export default function MediaHeader({ backgroundImage = homeHeaderBG }) {
+export default function MediaHeader({ backgroundImage = mediaHeader }) {
   const navItems = [
     { label: "HOME", path: "/" },
     { label: "ABOUT US", path: "/about" },
@@ -16,7 +16,7 @@ export default function MediaHeader({ backgroundImage = homeHeaderBG }) {
     <header
       className="media-header"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(${backgroundImage})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(${backgroundImage})`,
       }}
     >
       <div className="media-header__overlay">

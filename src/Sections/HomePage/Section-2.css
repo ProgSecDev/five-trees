@@ -1,10 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700;800&display=swap");
+@font-face {
+  font-family: "SairaCondensedBold";
+  src: url("../../font/SairaCondensed-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Impact";
+  src: url("../../font/impact.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CanvaSansRegular";
+  src: url("../../font/canva-sans-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 .section-two {
   width: 100%;
   background: #fff;
   padding: 18px 0 40px;
-  font-family: "Montserrat", sans-serif;
 }
 
 .section-two__image-wrap {
@@ -51,17 +72,17 @@
   color: #f2e8c4;
   text-align: center;
   text-transform: uppercase;
-  font-size: 2.05rem;
+  font-size: 2.5rem;
   line-height: 1.06;
   font-weight: 900;
   letter-spacing: 0.5px;
-  font-family: "Montserrat", sans-serif;
-  -webkit-text-stroke: 0.1px #000;
+  font-family: "Impact", sans-serif;
+  /* -webkit-text-stroke: 0.1px #000;
   text-shadow:
     -1px -1px 0 #000,
      1px -1px 0 #000,
     -1px  1px 0 #000,
-     1px  1px 0 #000;
+     1px  1px 0 #000; */
 }
 
 .section-two__content {
@@ -78,7 +99,7 @@
   font-size: 1.2rem;
   line-height: 1.55;
   font-weight: 700;
-  font-family: "Montserrat", sans-serif;
+  font-family: "CanvaSansRegular", sans-serif;
   background-color: rgba(255, 255, 255, 0.6);
 }
 

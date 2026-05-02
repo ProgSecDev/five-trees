@@ -1,4 +1,27 @@
-/* src/Sections/Section-2.css */
+font-face {
+  font-family: "SairaCondensedBold";
+  src: url("../../font/SairaCondensed-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Impact";
+  src: url("../../font/impact.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CanvaSansRegular";
+  src: url("../../font/canva-sans-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 .section-2 {
   position: relative;
   overflow: visible;
@@ -78,8 +101,8 @@
 }
 
 .section-2__mission-svg {
-  width: 72px;
-  height: 72px;
+  width: 100px;
+  height: 100px;
   fill: none;
   stroke: #5d7128;
   stroke-width: 3;
@@ -94,7 +117,7 @@
   line-height: 1;
   font-weight: 800;
   text-transform: uppercase;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "SairaCondensedBold", sans-serif;
 }
 
 .section-2__card {
@@ -112,6 +135,7 @@
   line-height: 1.4;
   font-weight: 400;
   text-align: center;
+  font-family: "CanvaSansRegular", sans-serif;
 }
 
 .section-2__shape {

@@ -68,56 +68,39 @@ export default function Section2() {
         </header>
 
         <section className="section2__group section2__group--authentic">
-          <div className="section2__label">AUTHENTIC - PDO</div>
+  <div className="section2__label">AUTHENTIC - PDO</div>
 
-          <div className="section2__grid section2__grid--three">
-            {authenticTop.map((product) => (
-              <ProductCard key={product.id} {...product} />
-            ))}
-          </div>
+  {/* Single container — CSS handles columns at every breakpoint */}
+  <div className="section2__grid section2__grid--authentic-all">
+    {authenticProducts.map((product) => (
+      <ProductCard key={product.id} {...product} />
+    ))}
+  </div>
 
-          <div className="section2__grid section2__grid--three">
-            {authenticMiddle.map((product) => (
-              <ProductCard key={product.id} {...product} />
-            ))}
-          </div>
+  <img
+    src={authenticChili}
+    alt=""
+    aria-hidden="true"
+    className="section2__decor section2__decor--chili"
+  />
+</section>
 
-          <div className="section2__grid section2__grid--single">
-            {authenticBottom.map((product) => (
-              <ProductCard key={product.id} {...product} />
-            ))}
-          </div>
+       <section className="section2__group section2__group--traditional">
+  <div className="section2__label">Traditional Cypriot PDO Cheese</div>
 
-          <img
-            src={authenticChili}
-            alt=""
-            aria-hidden="true"
-            className="section2__decor section2__decor--chili"
-          />
-        </section>
+  <div className="section2__grid section2__grid--traditional-all">
+    {traditionalProducts.map((product) => (
+      <ProductCard key={product.id} {...product} />
+    ))}
+  </div>
 
-        <section className="section2__group section2__group--traditional">
-          <div className="section2__label">Traditional Cypriot PDO Cheese</div>
-
-          <div className="section2__grid section2__grid--three">
-            {traditionalTop.map((product) => (
-              <ProductCard key={product.id} {...product} />
-            ))}
-          </div>
-
-          <div className="section2__grid section2__grid--single">
-            {traditionalBottom.map((product) => (
-              <ProductCard key={product.id} {...product} />
-            ))}
-          </div>
-
-          <img
-            src={traditionalDecor}
-            alt=""
-            aria-hidden="true"
-            className="section2__decor section2__decor--halloumi"
-          />
-        </section>
+  <img
+    src={traditionalDecor}
+    alt=""
+    aria-hidden="true"
+    className="section2__decor section2__decor--halloumi"
+  />
+</section>
       </div>
     </section>
   );

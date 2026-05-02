@@ -38,13 +38,15 @@ function Section3() {
         </div>
 
         <div className="section-3__right">
-          <div className="section-3__image-ring">
-            <img
-              src={visionImage}
-              alt="Savory pastry"
-              className="section-3__image"
-            />
-          </div>
+          {/* Dashed ring — sits behind the image, offset to bottom-left */}
+          <div className="section-3__dashed-ring" aria-hidden="true" />
+
+          {/* Image circle — sits on top, overlapping the ring's right/top arc */}
+          <img
+            src={visionImage}
+            alt="Savory pastry"
+            className="section-3__image-circle"
+          />
         </div>
       </div>
     </section>

@@ -1,11 +1,31 @@
-/* Sections/HomePage/Section-4.css */
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700;800&display=swap");
+@font-face {
+  font-family: "SairaCondensedBold";
+  src: url("../../font/SairaCondensed-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Impact";
+  src: url("../../font/impact.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CanvaSansRegular";
+  src: url("../../font/canva-sans-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 .section-four {
   width: 100%;
   padding: 30px 40px 46px;
   background: #fff;
-  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
   margin-top: 3rem;
 }
@@ -39,13 +59,13 @@
 
 .section-four__side-title span {
   color: #f4efd8;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 900;
   letter-spacing: 1px;
   text-transform: uppercase;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  font-family: "Montserrat", sans-serif;
+  font-family: "SairaCondensedBold", sans-serif;
 }
 
 .section-four__content {
@@ -65,18 +85,18 @@
   font-weight: 900;
   letter-spacing: -0.4px;
   text-transform: none;
-  font-family: "Montserrat", sans-serif;
-  -webkit-text-stroke: 0.1px #000;
-  text-shadow:
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
+  font-family: "SairaCondensedBold", sans-serif;
+    /* -webkit-text-stroke: 0.1px #000;
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px  1px 0 #000,
+      1px  1px 0 #000; */
 }
 
-.section-four__block:last-child .section-four__heading {
+/* .section-four__block:last-child .section-four__heading {
   text-transform: uppercase;
-}
+} */
 
 .section-four__text {
   margin: 0;
@@ -85,7 +105,7 @@
   font-size: 1.5rem;
   line-height: 1.28;
   font-weight: 500;
-  font-family: "Montserrat", sans-serif;
+  font-family: "CanvaSansRegular", sans-serif;
 }
 
 .section-four__right {
@@ -191,6 +211,33 @@
   }
 }
 
+@media (max-width: 980px) {
+.section-four__image-stack {
+    height: 520px;
+  }
+
+  .section-four__slice--top {
+    top: 20px;
+    right: 0;
+    width: 84%;
+    height: 180px;
+  }
+
+  .section-four__slice--middle {
+    top: 240px;
+    right: 40px;
+    width: 84%;
+    height: 180px;
+  }
+
+  .section-four__slice--bottom {
+    top: 460px;
+    right: 80px;
+    width: 84%;
+    height: 180px;
+  }
+}
+
 @media (max-width: 768px) {
   .section-four {
     padding: 24px 16px 36px;
@@ -208,7 +255,7 @@
   }
 
   .section-four__side-title span {
-    font-size: 0.86rem;
+    font-size: 1.86rem;
   }
 
   .section-four__content {
@@ -241,21 +288,21 @@
   .section-four__slice--top {
     top: 0;
     right: 0;
-    width: 84%;
+    width: 85%;
     height: 140px;
   }
 
   .section-four__slice--middle {
     top: 160px;
-    right: 18px;
-    width: 92%;
+    right: 20px;
+    width: 85%;
     height: 140px;
   }
 
   .section-four__slice--bottom {
     top: 320px;
-    right: 36px;
-    width: 84%;
+    right: 40px;
+    width: 85%;
     height: 140px;
   }
 

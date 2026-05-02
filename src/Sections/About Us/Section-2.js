@@ -30,13 +30,32 @@ function Section2() {
 
         <div className="section-2__right">
           <div className="section-2__mission-icon" aria-hidden="true">
-            <svg viewBox="0 0 64 64" className="section-2__mission-svg">
-              <circle cx="28" cy="36" r="18" />
-              <circle cx="28" cy="36" r="10" />
-              <circle cx="28" cy="36" r="3.5" />
-              <path d="M28 36 L47 17" />
-              <path d="M43 15 L54 10 L49 21 Z" />
-              <path d="M47 17 L54 10" />
+            <svg
+              viewBox="0 0 72 72"
+              className="section-2__mission-svg"
+              fill="none"
+              stroke="#5d7128"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              {/* Outer ring */}
+              <circle cx="30" cy="40" r="22" strokeWidth="2.8" />
+              {/* Second ring */}
+              <circle cx="30" cy="40" r="16" strokeWidth="2.8" />
+              {/* Third ring */}
+              <circle cx="30" cy="40" r="10" strokeWidth="2.8" />
+              {/* Inner bullseye dot */}
+              <circle cx="30" cy="40" r="4" strokeWidth="2.8" />
+
+              {/* Arrow shaft — from top-right toward center */}
+              <line x1="62" y1="10" x2="34" y2="36" strokeWidth="2.8" />
+
+              {/* Arrowhead tip */}
+              <polyline points="34,28 34,36 42,36" strokeWidth="2.8" />
+
+              {/* Arrow fletching (tail feathers) */}
+              <polyline points="56,10 62,10 62,16" strokeWidth="2.8" />
+              <line x1="58" y1="8" x2="64" y2="14" strokeWidth="2.8" />
             </svg>
           </div>
 

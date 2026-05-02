@@ -1,3 +1,27 @@
+font-face {
+  font-family: "SairaCondensedBold";
+  src: url("../../font/SairaCondensed-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Impact";
+  src: url("../../font/impact.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CanvaSansRegular";
+  src: url("../../font/canva-sans-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 .section-3 {
   position: relative;
   overflow: hidden;
@@ -49,12 +73,12 @@
 .section-3__title {
   margin: 0 0 10px;
   color: #5d7128;
-  font-size: 66px;
+  font-size: 56px;
   line-height: 1;
   font-weight: 800;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "SairaCondensedBold", sans-serif;
 }
 
 .section-3__card {
@@ -69,11 +93,11 @@
 .section-3__text {
   margin: 0;
   color: #ffffff;
-  font-size: 34px;
+  font-size: 24px;
   line-height: 1.28;
   font-weight: 400;
   text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "CanvaSansRegular", sans-serif;
 }
 
 .section-3__right {

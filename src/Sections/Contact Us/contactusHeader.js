@@ -4,8 +4,8 @@ import contactHeroBg from "../../assets/Contact US/contactHeroBg.png";
 
 export default function ContactHeader({
   backgroundImage = contactHeroBg,
-  heading = "WE’D LOVE TO TALK TO YOU",
-  // subheading = "WE’D LOVE TO TALK TO YOU",
+  heading = "CONTACT US",
+  subheading = "WE’D LOVE TO TALK TO YOU",
 }) {
   const navItems = [
     { label: "HOME", path: "/" },
@@ -19,7 +19,7 @@ export default function ContactHeader({
     <section
       className="contact-hero"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url(${backgroundImage})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(${backgroundImage})`,
       }}
     >
       <div className="contact-hero__overlay">
@@ -37,7 +37,7 @@ export default function ContactHeader({
 
         <div className="contact-hero__content">
           <h1 className="contact-hero__heading">{heading}</h1>
-          {/* <h1 className="contact-hero__subheading">{subheading}</h1> */}
+          <h1 className="contact-hero__subheading">{subheading}</h1>
         </div>
       </div>
     </section>

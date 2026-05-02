@@ -37,7 +37,7 @@ export default function AboutHeader() {
           <h1 className="about-header__title">BOLD TASTE STARTS HERE</h1>
 
           <NavLink to="/product" className="about-header__button">
-            SHOP NOW
+            View Products
           </NavLink>
         </div>
       </div>
