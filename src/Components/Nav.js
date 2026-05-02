@@ -1,6 +1,20 @@
 // src/components/nav.js
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import SairaCondensedBold from "../../src/font/SairaCondensed-Bold.ttf";
+
+// Inject @font-face dynamically
+const style = document.createElement("style");
+style.textContent = `
+  @font-face {
+    font-family: 'SairaCondensed';
+    src: url('${SairaCondensedBold}') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+`;
+document.head.appendChild(style);
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +33,7 @@ function Nav() {
   const navItems = [
     { label: "Home", path: "/" },
     { label: "About Us", path: "/about" },
-    { label: "Product", path: "/product" },
+    { label: "Products", path: "/product" },
     { label: "Media", path: "/media" },
     { label: "Contact Us", path: "/contact" },
   ];
@@ -43,7 +57,8 @@ function Nav() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white font-['Montserrat'] shadow-sm">
+    <nav className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm"
+      style={{ fontFamily: "'SairaCondensed', sans-serif" }} >
       <div className="flex h-16 w-full items-center justify-end px-0">
         <button
           type="button"
