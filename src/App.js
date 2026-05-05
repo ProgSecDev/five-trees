@@ -36,7 +36,7 @@ const AppContent = () => {
 
 const App = () => {
   return (
-    <Router basename="/five-trees">
+    <Router>
       <AppContent />
     </Router>
   );
