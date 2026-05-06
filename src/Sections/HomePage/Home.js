@@ -5,6 +5,7 @@ import Section2 from "./Section-2";
 import Section3 from "./Section-3";
 import Section4 from "./Section-4";
 import Section5 from "./Section-5";
+import WhatsAppWidget from "../../Components/WhatsappWidget";
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
         <Section3 />
         <Section4 />
         <Section5 />
+        <WhatsAppWidget />
       </section>
     </main>
   );

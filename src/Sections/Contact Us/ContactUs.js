@@ -1,6 +1,7 @@
 import React from "react";
 import ContactHeader from "./contactusHeader";
 import Footer from "../../Components/Footer";
+import WhatsAppWidget from "../../Components/WhatsappWidget";
 
 function Media() {
   return (
@@ -8,6 +9,7 @@ function Media() {
       <section id="media">
         <ContactHeader />
         <Footer />
+        <WhatsAppWidget />
       </section>
     </main>
   );

@@ -4,6 +4,7 @@ import AboutHeader from "./aboutHeader";
 import Section2 from "./Section-2";
 import Section3 from "./Section-3";
 import Footer from "../../Components/Footer";
+import WhatsAppWidget from "../../Components/WhatsappWidget";
 
 function About() {
   return (
@@ -13,6 +14,7 @@ function About() {
         <Section2 />
         <Section3 />
         <Footer />
+        <WhatsAppWidget />
       </section>
     </main>
   );

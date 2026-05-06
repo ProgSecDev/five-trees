@@ -6,6 +6,7 @@ import Section4 from "./Section-4";
 import Section5 from "./Section-5";
 import Section6 from "./Section-6";
 import Footer from "../../Components/Footer";
+import WhatsAppWidget from "../../Components/WhatsappWidget";
 
 function Media() {
   return (
@@ -18,6 +19,7 @@ function Media() {
         <Section5 />
         <Section6 />
         <Footer />
+        <WhatsAppWidget />
       </section>
     </main>
   );
