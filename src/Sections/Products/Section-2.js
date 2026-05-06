@@ -1,6 +1,9 @@
 // src/Sections/Products/Section-2.js
 import React from "react";
 import "./Section-2.css";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { scrollToHash } from "../../utils/scrollToHash";
 
 import sectionLogo from "../../assets/ProductsPage/products-logo.png";
 
@@ -52,12 +55,17 @@ function ProductCard({ image, title, subtitle }) {
 }
 
 export default function Section2() {
+  const { hash } = useLocation();
   const authenticTop = authenticProducts.slice(0, 3);
   const authenticMiddle = authenticProducts.slice(3, 6);
   const authenticBottom = authenticProducts.slice(6);
 
   const traditionalTop = traditionalProducts.slice(0, 3);
   const traditionalBottom = traditionalProducts.slice(3);
+
+  useEffect(() => {
+    scrollToHash(hash);
+  }, [hash]);
 
   return (
     <section className="section2">
@@ -67,7 +75,7 @@ export default function Section2() {
           <h2 className="section2__heading">OUR PRODUCTS</h2>
         </header>
 
-        <section className="section2__group section2__group--authentic">
+        <section className="section2__group section2__group--authentic" id="authentic">
   <div className="section2__label">AUTHENTIC - PDO</div>
 
   {/* Single container — CSS handles columns at every breakpoint */}
@@ -85,7 +93,7 @@ export default function Section2() {
   />
 </section>
 
-       <section className="section2__group section2__group--traditional">
+       <section className="section2__group section2__group--traditional" id="traditional">
   <div className="section2__label">Traditional Cypriot PDO Cheese</div>
 
   <div className="section2__grid section2__grid--traditional-all">

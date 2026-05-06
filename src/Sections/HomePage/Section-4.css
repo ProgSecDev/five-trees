@@ -51,9 +51,9 @@
   min-height: 742px;
   background: #6a7f28;
   display: flex;
-  align-items: flex-start;
+  align-items: center;      /* was: flex-start → centers vertically */
   justify-content: center;
-  padding-top: 22px;
+  padding-top: 0;           /* was: 22px → remove the top offset */
   box-sizing: border-box;
 }
 
@@ -92,6 +92,8 @@
       1px -1px 0 #000,
       -1px  1px 0 #000,
       1px  1px 0 #000; */
+      opacity: 0;
+  transform: translateX(-48px);
 }
 
 /* .section-four__block:last-child .section-four__heading {
@@ -106,6 +108,8 @@
   line-height: 1.28;
   font-weight: 500;
   font-family: "CanvaSansRegular", sans-serif;
+  clip-path: inset(0 100% 0 0);
+  opacity: 0.4;
 }
 
 .section-four__right {
@@ -123,6 +127,27 @@
   position: absolute;
   overflow: hidden;
   background: transparent;
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+/* ── Triggered when .is-visible is added ── */
+
+/* Each block staggers via --block-index CSS var */
+.section-four__left.is-visible .section-four__heading {
+  animation: fadeLeft 0.65s cubic-bezier(0.4, 0, 0.2, 1)
+    calc(0.1s + var(--block-index, 0) * 0.3s) forwards;
+}
+
+.section-four__left.is-visible .section-four__text {
+  animation: typeReveal 0.9s cubic-bezier(0.4, 0, 0.2, 1)
+    calc(0.4s + var(--block-index, 0) * 0.3s) forwards;
+}
+
+/* Each slice staggers via --slice-index CSS var */
+.section-four__right.is-visible .section-four__slice {
+  animation: sliceFadeLeft 0.7s cubic-bezier(0.4, 0, 0.2, 1)
+    calc(0.2s + var(--slice-index, 0) * 0.2s) forwards;
 }
 
 .section-four__slice--top {
@@ -248,11 +273,12 @@
     column-gap: 16px;
   }
 
-  .section-four__side-title {
-    width: 62px;
-    min-height: 100%;
-    padding-top: 14px;
-  }
+.section-four__side-title {
+  width: 62px;
+  min-height: 100%;
+  padding-top: 0;           /* was: 14px */
+  align-items: center;      /* add this */
+}
 
   .section-four__side-title span {
     font-size: 1.86rem;
@@ -317,4 +343,21 @@
   .section-four__slice--bottom .section-four__image {
     transform: translateY(-320px);
   }
+}
+
+/* ─── ANIMATIONS ─────────────────────────────────────────── */
+
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(-48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes typeReveal {
+  from { clip-path: inset(0 100% 0 0); opacity: 0.4; }
+  to   { clip-path: inset(0 0% 0 0);   opacity: 1; }
+}
+
+@keyframes sliceFadeLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
 }

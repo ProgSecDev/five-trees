@@ -1,9 +1,8 @@
 // src/components/nav.js
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import SairaCondensedBold from "../../src/font/SairaCondensed-Bold.ttf";
+import SairaCondensedBold from "../font/SairaCondensed-Bold.ttf";
 
-// Inject @font-face dynamically
 const style = document.createElement("style");
 style.textContent = `
   @font-face {
@@ -13,113 +12,201 @@ style.textContent = `
     font-style: normal;
     font-display: swap;
   }
+
+  /* ── DESKTOP: full-width green bar ── */
+  .nav-root {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    width: 100%;
+    background: #5d7128;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 18px 48px 18px 32px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 46px;
+  }
+
+  .nav-link {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-family: 'SairaCondensed', sans-serif;
+    padding: 0;
+    transition: color 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .nav-link:hover {
+    color: #c7d86b;
+  }
+
+  .nav-link--active {
+    color: #c7d86b;
+  }
+
+  /* ── MOBILE: hamburger only ── */
+  .nav-mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: auto;
+  }
+
+  .nav-mobile-toggle svg {
+    width: 28px;
+    height: 28px;
+    color: #ffffff;
+    display: block;
+  }
+
+  .nav-mobile-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #5d7128;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .nav-mobile-link {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-family: 'SairaCondensed', sans-serif;
+    text-align: left;
+    padding: 14px 32px;
+    transition: background 0.15s ease;
+    width: 100%;
+  }
+
+  .nav-mobile-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-mobile-link--active {
+    color: #c7d86b;
+  }
+
+  @media (max-width: 992px) {
+    .nav-root {
+      padding: 14px 20px;
+      position: fixed;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .nav-mobile-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 `;
-document.head.appendChild(style);
+
+if (!document.head.querySelector("#nav-styles")) {
+  style.id = "nav-styles";
+  document.head.appendChild(style);
+}
+
+const navItems = [
+  { label: "HOME",       path: "/" },
+  { label: "ABOUT US",   path: "/about" },
+  { label: "PRODUCTS",   path: "/product" },
+  { label: "MEDIA",      path: "/media" },
+  { label: "CONTACT US", path: "/contact" },
+];
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
+  const navigate  = useNavigate();
+  const location  = useLocation();
 
   const goToPage = (path) => {
     navigate(path);
     setIsMenuOpen(false);
   };
 
-  const navItems = [
-    { label: "Home", path: "/" },
-    { label: "About Us", path: "/about" },
-    { label: "Products", path: "/product" },
-    { label: "Media", path: "/media" },
-    { label: "Contact Us", path: "/contact" },
-  ];
-
-  const getDesktopItemClassName = (path) => {
-    const isActive = location.pathname === path;
-
-    return [
-      "text-[15px] font-extrabold uppercase tracking-[0.5px] transition-colors duration-200",
-      isActive ? "text-[#1f3b63]" : "text-gray-600 hover:text-[#1f3b63]",
-    ].join(" ");
-  };
-
-  const getMobileItemClassName = (path) => {
-    const isActive = location.pathname === path;
-
-    return [
-      "border-b border-gray-100 py-3 text-left text-sm font-extrabold uppercase tracking-[0.5px] last:border-b-0",
-      isActive ? "text-[#1f3b63]" : "text-gray-700 hover:text-[#1f3b63]",
-    ].join(" ");
-  };
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm"
-      style={{ fontFamily: "'SairaCondensed', sans-serif" }} >
-      <div className="flex h-16 w-full items-center justify-end px-0">
-        <button
-          type="button"
-          onClick={toggleMenu}
-          className="mr-4 inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 lg:hidden"
-          aria-label="Toggle navigation"
-          aria-expanded={isMenuOpen}
-        >
-          <svg
-            className="h-6 w-6"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            {isMenuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
+    <nav className="nav-root" aria-label="Main navigation">
 
-        <div className="hidden lg:flex lg:items-center lg:justify-end lg:gap-10 lg:pr-3 xl:pr-4">
+      {/* Desktop links */}
+      <div className="nav-links">
+        {navItems.map((item) => (
+          <button
+            key={item.path}
+            type="button"
+            onClick={() => goToPage(item.path)}
+            className={`nav-link${isActive(item.path) ? " nav-link--active" : ""}`}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Mobile hamburger */}
+      <button
+        type="button"
+        className="nav-mobile-toggle"
+        onClick={() => setIsMenuOpen((p) => !p)}
+        aria-label="Toggle navigation"
+        aria-expanded={isMenuOpen}
+      >
+        <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          {isMenuOpen ? (
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          ) : (
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          )}
+        </svg>
+      </button>
+
+      {/* Mobile dropdown */}
+      {isMenuOpen && (
+        <div className="nav-mobile-dropdown">
           {navItems.map((item) => (
             <button
-              key={item.label}
+              key={item.path}
               type="button"
               onClick={() => goToPage(item.path)}
-              className={getDesktopItemClassName(item.path)}
+              className={`nav-mobile-link${isActive(item.path) ? " nav-mobile-link--active" : ""}`}
             >
               {item.label}
             </button>
           ))}
         </div>
-      </div>
-
-      {isMenuOpen && (
-        <div className="border-t border-gray-200 bg-white lg:hidden">
-          <div className="flex flex-col px-4 py-3">
-            {navItems.map((item) => (
-              <button
-                key={item.label}
-                type="button"
-                onClick={() => goToPage(item.path)}
-                className={getMobileItemClassName(item.path)}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-        </div>
       )}
+
     </nav>
   );
 }

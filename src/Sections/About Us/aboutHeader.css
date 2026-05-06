@@ -44,33 +44,6 @@
   min-height: 70vh;
 }
 
-.about-header__nav {
-  position: absolute;
-  top: 70px;
-  right: 130px;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 46px;
-  padding: 18px 28px 18px 32px;
-  background: #5d7128;
-}
-
-.about-header__nav-link {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  font-family: "SairaCondensedBold", sans-serif;
-}
-
-.about-header__nav-link.is-active {
-  color: #c7d86b;
-}
-
 .about-header__hero-content {
   position: relative;
   z-index: 2;
@@ -149,6 +122,8 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   font-family: "Impact", sans-serif;
+  opacity: 0;
+  transform: translateX(-48px);
 }
 
 .about-header__about-text {
@@ -160,6 +135,16 @@
   line-height: 1.4;
   letter-spacing: 0.2px;
   font-family: "CanvaSansRegular", sans-serif;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.about-header__about.is-visible .about-header__about-title {
+  animation: fadeSlideLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
+}
+
+.about-header__about.is-visible .about-header__about-text {
+  animation: riseUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.7s forwards;
 }
 
 .about-header__cheese-art {
@@ -234,15 +219,6 @@
   .about-header__about-text {
     font-size: 24px;
   }
-
-  .about-header__nav {
-    gap: 28px;
-    display: none;
-  }
-
-  .about-header__nav-link {
-    font-size: 20px;
-  }
 }
 
 @media (max-width: 900px) {
@@ -254,17 +230,6 @@
     min-height: 460px;
     gap: 34px;
     top: -40px;
-  }
-
-  .about-header__nav {
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 18px;
-    padding: 14px 18px;
-    display: none;
   }
 
   .about-header__title {
@@ -306,10 +271,6 @@
     padding: 120px 16px 32px;
   }
 
-  .about-header__nav-link {
-    font-size: 16px;
-  }
-
   .about-header__title {
     font-size: 30px;
   }
@@ -332,4 +293,41 @@
   .about-header__cheese-art {
     display: none;
   }
+}
+
+/* ─── ANIMATIONS ─────────────────────────────────────────── */
+
+@keyframes typeReveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+
+@keyframes bounceIn {
+  0%   { opacity: 0; transform: scale(0.3); }
+  50%  { opacity: 1; transform: scale(1.08); }
+  70%  { transform: scale(0.95); }
+  85%  { transform: scale(1.03); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeSlideLeft {
+  from { opacity: 0; transform: translateX(-48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes riseUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Hero: animates on mount ── */
+
+.animate-hero .about-header__title {
+  clip-path: inset(0 100% 0 0);
+  animation: typeReveal 1.1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+}
+
+.animate-hero .about-header__button {
+  opacity: 0;
+  animation: bounceIn 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1.2s forwards;
 }

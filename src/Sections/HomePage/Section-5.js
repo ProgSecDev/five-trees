@@ -1,27 +1,16 @@
 // Sections/HomePage/Section-5.js
 import React, { useState } from "react";
 import "./Section-5.css";
+import { NavLink } from "react-router-dom";
 
 import product1 from "../../assets/HomePage/Section5-Card1.png";
-import product2 from "../../assets/HomePage/Section5-Card2.png";
+import product2 from "../../assets/HomePage/halloumi with salad.png";
 import product3 from "../../assets/HomePage/Section5-Card3.png";
 
 const products = [
-  {
-    id: 1,
-    title: "Premium\nHalloumi Cheese",
-    image: product1,
-  },
-  {
-    id: 2,
-    title: "Authentic - PDO",
-    image: product2,
-  },
-  {
-    id: 3,
-    title: "Traditional\nCypriot PDO Cheese",
-    image: product3,
-  },
+  { id: 1, title: "Premium\nHalloumi Cheese", image: product1, link: "/product" },
+  { id: 2, title: "Authentic - PDO",          image: product2, link: "/product#authentic" },
+  { id: 3, title: "Traditional\nCypriot PDO Cheese", image: product3, link: "/product#traditional" },
 ];
 
 function Section5({ items = products }) {
@@ -73,14 +62,16 @@ function Section5({ items = products }) {
               </div>
 
               <div className="section-five__label">
-                <h3 className="section-five__title">
-                  {item.title.split("\n").map((line, index, arr) => (
-                    <React.Fragment key={`${item.id}-${index}`}>
-                      {line}
-                      {index < arr.length - 1 && <br />}
-                    </React.Fragment>
-                  ))}
-                </h3>
+                 <NavLink to={item.link} className="section-five__title-link">
+    <h3 className="section-five__title">
+      {item.title.split("\n").map((line, index, arr) => (
+        <React.Fragment key={`${item.id}-${index}`}>
+          {line}
+          {index < arr.length - 1 && <br />}
+        </React.Fragment>
+      ))}
+    </h3>
+  </NavLink>
               </div>
             </article>
           ))}
