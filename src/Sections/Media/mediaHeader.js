@@ -4,13 +4,6 @@ import "./mediaHeader.css";
 import mediaHeader from "../../assets/Media/media-header.png";
 
 export default function MediaHeader({ backgroundImage = mediaHeader }) {
-  const navItems = [
-    { label: "HOME", path: "/" },
-    { label: "ABOUT US", path: "/about" },
-    { label: "PRODUCTS", path: "/product" },
-    { label: "MEDIA", path: "/media" },
-    { label: "CONTACT US", path: "/contact" },
-  ];
 
   return (
     <header
@@ -20,17 +13,6 @@ export default function MediaHeader({ backgroundImage = mediaHeader }) {
       }}
     >
       <div className="media-header__overlay">
-        <nav className="media-header__nav" aria-label="Home page navigation">
-          {navItems.map((item) => (
-            <span
-              key={item.path}
-              className={`media-header__nav-link${item.path === "/media" ? " is-active" : ""}`}
-              aria-disabled="true"
-            >
-              {item.label}
-            </span>
-          ))}
-        </nav>
       </div>
     </header>
   );

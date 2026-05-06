@@ -91,7 +91,7 @@
      1px  1px 0 #000; */
 }
 
-.hero-button {
+.product-header__button {
   min-width: 330px;
   padding: 20px 40px;
   border: none;
@@ -103,20 +103,11 @@
   text-transform: uppercase;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  margin-left: 5.5rem;
+  font-family: "SairaCondensedBold", sans-serif;
 }
 
-.hero-button:hover {
+.product-header__button:hover {
   opacity: 0.92;
-}
-
-.hero-button:active {
-  transform: translateY(0);
-}
-
-.hero-button:focus-visible {
-  outline: 3px solid rgba(255, 255, 255, 0.9);
-  outline-offset: 4px;
 }
 
 .hero-mint {
@@ -163,6 +154,12 @@
     width: auto;
   }
 
+  .product-header__button {
+    min-width: 210px;
+    height: 80px;
+    font-size: 28px;
+  }
+
   .hero-mint {
     right: 24px;
     bottom: -72px;
@@ -181,11 +178,10 @@
     font-size: clamp(38px, 11vw, 54px);
   }
 
-  .hero-button {
-    min-width: 190px;
-    min-height: 72px;
-    padding: 18px 26px;
-    font-size: 21px;
+  .product-header__button {
+    min-width: 180px;
+    height: 72px;
+    font-size: 22px;
   }
 
   .hero-mint {
