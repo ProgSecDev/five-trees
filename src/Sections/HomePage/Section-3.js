@@ -1,5 +1,4 @@
-// Sections/HomePage/Section3.js
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./Section-3.css";
 
 import card1 from "../../assets/HomePage/Section3Card1.png";
@@ -35,11 +34,38 @@ const sectionItems = [
 ];
 
 function Section3({ items = sectionItems }) {
+  const itemRefs = useRef([]);
+
+  useEffect(() => {
+    const observers = itemRefs.current.map((el) => {
+      if (!el) return null;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            el.classList.add("is-visible");
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.2 }
+      );
+
+      observer.observe(el);
+      return observer;
+    });
+
+    return () => observers.forEach((obs) => obs?.disconnect());
+  }, []);
+
   return (
     <section className="section-three" id="product">
       <div className="section-three__container">
-        {items.map((item) => (
-          <article key={item.id} className="section-three__item">
+        {items.map((item, i) => (
+          <article
+            key={item.id}
+            className="section-three__item"
+            ref={(el) => (itemRefs.current[i] = el)}
+          >
             <div className="section-three__icon-wrap">
               <div className="section-three__icon-circle" aria-hidden="true">
                 <img

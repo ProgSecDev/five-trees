@@ -1,15 +1,35 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./Section-2.css";
 import section2img from "../../assets/HomePage/section2img.png";
 
 function Section2({
   image = section2img,
   title = "HALLOUMI: THE TASTE OF CYPRUS",
-  description = `Halloumi is Cyprus’s most iconic cheese, crafted through generations of tradition. Known for its unique ability to be grilled or fried without melting, it offers a perfect balance, crispy on the outside, soft and rich on the inside. With its fresh, slightly salty flavor and subtle hint of mint, halloumi delivers an authentic Mediterranean experience. Protected within the European Union, true halloumi is produced exclusively in Cyprus, preserving its quality and heritage.`,
+  description = `Halloumi is Cyprus's most iconic cheese, crafted through generations of tradition. Known for its unique ability to be grilled or fried without melting, it offers a perfect balance, crispy on the outside, soft and rich on the inside. With its fresh, slightly salty flavor and subtle hint of mint, halloumi delivers an authentic Mediterranean experience. Protected within the European Union, true halloumi is produced exclusively in Cyprus, preserving its quality and heritage.`,
 }) {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add("is-visible");
+          observer.disconnect(); // animate once, then stop observing
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="section-two" id="story">
-      <div className="section-two__image-wrap">
+      <div className="section-two__image-wrap" ref={sectionRef}>
         <img src={image} alt={title} className="section-two__image" />
 
         <div className="section-two__overlay">

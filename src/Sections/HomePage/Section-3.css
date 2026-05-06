@@ -82,6 +82,8 @@
      1px -1px 0 #000,
     -1px  1px 0 #000,
      1px  1px 0 #000; */
+  opacity: 0;
+  transform: translateX(-40px);
 }
 
 .section-three__card {
@@ -119,6 +121,17 @@
   max-width: 95%;
   font-family: "CanvaSansRegular", sans-serif;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Triggered per-card when it enters viewport */
+.section-three__item.is-visible .section-three__title {
+  animation: fadeSlideLeft 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
+}
+
+.section-three__item.is-visible .section-three__text {
+  animation: fadeSlideUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
 }
 
 @media (max-width: 1200px) {
@@ -184,5 +197,29 @@
   .section-three__text {
     font-size: 0.98rem;
     line-height: 1.32;
+  }
+}
+
+/* ─── ANIMATIONS ─────────────────────────────────────────── */
+
+@keyframes fadeSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

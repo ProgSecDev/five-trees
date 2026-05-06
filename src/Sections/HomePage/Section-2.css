@@ -69,7 +69,8 @@
 .section-two__title {
   margin: 0;
   max-width: 980px;
-  color: #f2e8c4;
+  /* color: #f2e8c4; */
+  color: #fff;
   text-align: center;
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -83,6 +84,8 @@
      1px -1px 0 #000,
     -1px  1px 0 #000,
      1px  1px 0 #000; */
+     /* hidden until visible */
+  clip-path: inset(0 100% 0 0);
 }
 
 .section-two__content {
@@ -101,6 +104,18 @@
   font-weight: 700;
   font-family: "CanvaSansRegular", sans-serif;
   background-color: rgba(255, 255, 255, 0.6);
+  /* hidden until visible */
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Triggered when IntersectionObserver adds .is-visible */
+.section-two__image-wrap.is-visible .section-two__title {
+  animation: typeReveal 1.1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+}
+
+.section-two__image-wrap.is-visible .section-two__description {
+  animation: riseUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 1.1s forwards;
 }
 
 @media (max-width: 1200px) {
@@ -206,5 +221,23 @@
     font-size: 0.8rem;
     line-height: 1.32;
     padding: 8px 10px;
+  }
+}
+
+/* ─── ANIMATIONS ─────────────────────────────────────────── */
+
+@keyframes typeReveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+
+@keyframes riseUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
