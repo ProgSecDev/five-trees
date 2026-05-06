@@ -237,11 +237,12 @@ function Footer() {
   }
 
   .footer {
-    width: 100%;
-    background: #fff;
-    padding: 32px 28px 26px;
-    box-sizing: border-box;
-  }
+  width: 100%;
+  background: #fff;
+  padding: 32px 28px 26px;
+  box-sizing: border-box;
+  overflow: hidden;        /* ← add this */
+}
 
   .footer__container {
     max-width: 1320px;
@@ -322,11 +323,11 @@ function Footer() {
 
   /* RIGHT PANEL — always relative so absolute plate is contained */
   .footer__right {
-    position: relative;
-    padding-top: 18px;
-    padding-bottom: 300px;
-    min-height: 770px;
-  }
+  position: relative;
+  padding-top: 18px;
+  padding-bottom: 40px;   /* was: 300px */
+  min-height: 770px;
+}
 
   .footer__right-title {
     margin: 0 0 28px;
@@ -433,8 +434,8 @@ function Footer() {
 
     /* enough bottom space for the rotated plate to overlap the textarea */
     .footer__right {
-      padding-bottom: 200px;
-    }
+    padding-bottom: 40px;  /* was: 200px */
+  }
 
     .footer__form {
       max-width: 100%;
@@ -468,8 +469,8 @@ function Footer() {
 
     /* enough room for smaller rotated plate */
     .footer__right {
-      padding-bottom: 160px;
-    }
+    padding-bottom: 40px;  /* was: 160px */
+  }
 
     .footer__contact-item {
       grid-template-columns: 28px 1fr;
