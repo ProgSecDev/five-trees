@@ -142,6 +142,7 @@ function Footer() {
   const contactItems = [
     {
       icon: <LocationIcon />,
+      href: "https://www.google.com/maps/search/Bank%20of%20Cyprus%200594/@34.93016815185547,33.62872314453125,17z?hl=en",
       content: (
         <>
           Spyrou Kyprianou 41-43,
@@ -160,6 +161,7 @@ function Footer() {
     },
     {
       icon: <InstagramIcon />,
+      href: "https://www.instagram.com/fivetreescy?igsh=MWN3dGhoM3I1cDFyZw==",
       content: <>fivetreescy</>,
     },
     {
@@ -176,12 +178,31 @@ function Footer() {
             <h2 className="footer__left-title">CONTACT US</h2>
 
             <div className="footer__contact-list">
-              {contactItems.map((item, index) => (
-                <div key={index} className="footer__contact-item">
-                  <div className="footer__icon">{item.icon}</div>
-                  <div className="footer__contact-text">{item.content}</div>
-                </div>
-              ))}
+              {contactItems.map((item, index) => {
+                const inner = (
+                  <>
+                    <div className="footer__icon">{item.icon}</div>
+                    <div className="footer__contact-text">{item.content}</div>
+                  </>
+                );
+
+                return item.href ? (
+
+                  <a
+                    key={index}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer__contact-item footer__contact-item--link"
+                  >
+                    {inner}
+                  </a>
+                ) : (
+                  <div key={index} className="footer__contact-item">
+                    {inner}
+                  </div>
+                );
+              })}
             </div>
 
             <div className="footer__qr-wrap">
@@ -204,6 +225,9 @@ function Footer() {
                 className="footer__textarea"
                 rows="7"
               />
+              <button type="submit" className="footer__submit-btn">
+                SEND MESSAGE
+              </button>
             </form>
 
             <img src={dessertPlate} alt="Dessert plate" className="footer__plate-image" />
@@ -284,6 +308,23 @@ function Footer() {
     gap: 18px;
     align-items: center;
   }
+
+  .footer__contact-item--link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer__contact-item--link:hover {
+  opacity: 0.75;
+  transform: translateX(4px);
+}
+
+.footer__contact-item--link:hover .footer__contact-text {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
   .footer__icon {
     width: 34px;
@@ -395,6 +436,35 @@ function Footer() {
     transform-origin: bottom right;
   }
 
+  .footer__submit-btn {
+  align-self: flex-start;
+  margin-top: 4px;
+  background: #617827;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 18px 56px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  box-shadow: 0 6px 14px rgba(97, 120, 39, 0.25);
+}
+
+.footer__submit-btn:hover {
+  background: #506420;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(97, 120, 39, 0.35);
+}
+
+.footer__submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(97, 120, 39, 0.25);
+}
+
   @media (max-width: 1280px) {
     .footer__container {
       grid-template-columns: 460px 1fr;
@@ -500,6 +570,14 @@ function Footer() {
       padding: 20px 18px;
       font-size: 0.95rem;
     }
+
+    .footer__submit-btn {
+  padding: 14px 40px;
+  font-size: 0.9rem;
+  width: 100%;
+  align-self: stretch;
+  text-align: center;
+}
   }
 `}</style>
     </>

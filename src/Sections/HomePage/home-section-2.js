@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
-import "./Section-2.css";
+import "./home-section-2.css";
 import section2img from "../../assets/HomePage/section2img.png";
 
-function Section2({
+function HomeSection2({
   image = section2img,
   title = "HALLOUMI: THE TASTE OF CYPRUS",
   description = `Halloumi is Cyprus's most iconic cheese, crafted through generations of tradition. Known for its unique ability to be grilled or fried without melting, it offers a perfect balance, crispy on the outside, soft and rich on the inside. With its fresh, slightly salty flavor and subtle hint of mint, halloumi delivers an authentic Mediterranean experience. Protected within the European Union, true halloumi is produced exclusively in Cyprus, preserving its quality and heritage.`,
@@ -28,17 +28,17 @@ function Section2({
   }, []);
 
   return (
-    <section className="section-two" id="story">
-      <div className="section-two__image-wrap" ref={sectionRef}>
-        <img src={image} alt={title} className="section-two__image" />
+    <section className="home-section-two" id="story">
+      <div className="home-section-two__image-wrap" ref={sectionRef}>
+        <img src={image} alt={title} className="home-section-two__image" />
 
-        <div className="section-two__overlay">
-          <div className="section-two__title-bar">
-            <h2 className="section-two__title">{title}</h2>
+        <div className="home-section-two__overlay">
+          <div className="home-section-two__title-bar">
+            <h2 className="home-section-two__title">{title}</h2>
           </div>
 
-          <div className="section-two__content">
-            <p className="section-two__description">{description}</p>
+          <div className="home-section-two__content">
+            <p className="home-section-two__description">{description}</p>
           </div>
         </div>
       </div>
@@ -46,4 +46,4 @@ function Section2({
   );
 }
 
-export default Section2;
+export default HomeSection2;

@@ -1,18 +1,18 @@
 import React, { useEffect, useRef } from "react";
-import "./Section-4.css";
+import "./home-section-4.css";
 import processImg from "../../assets/HomePage/Section4-Img.png";
 
-function Section4({
+function HomeSection4({
   image = processImg,
   sideTitle = "OUR PROCESS",
   sections = [
     {
       title: "Packaging Solutions",
-      text: <>We source premium Halloumi, olive oil, and olive products <br />crafted using traditional Cypriot methods, ensuring quality, <br />authenticity, and consistency.</>,
+      text: <>We source premium Halloumi, olive oil, and olive products <br />crafted using traditional Cypriot methods, ensuring quality <br />authenticity, and consistency.</>,
     },
     {
       title: "Authentic Sources",
-      text: <>Our products are carefully packed using vacuum-<br />sealed or bulk container options to ensure <br />freshness, quality, and safe transport. Customized <br />packaging solutions are available to meet specific <br />client and market requirements.</>,
+      text: <>Our products are carefully packed using vacuum<br />sealed or bulk container options to ensure <br />freshness, quality, and safe transport. <br /> Customized packaging solutions are available to meet <br />specific client and market requirements.</>,
     },
     {
       title: "Quality & Certification",
@@ -43,39 +43,39 @@ function Section4({
   }, []);
 
   return (
-    <section className="section-four" id="media">
-      <div className="section-four__container">
+    <section className="home-section-four" id="media">
+      <div className="home-section-four__container">
 
         {/* LEFT — headings + text */}
-        <div className="section-four__left" ref={leftRef}>
-          <div className="section-four__side-title">
+        <div className="home-section-four__left" ref={leftRef}>
+          <div className="home-section-four__side-title">
             <span>{sideTitle}</span>
           </div>
 
-          <div className="section-four__content">
+          <div className="home-section-four__content">
             {sections.map((section, index) => (
               <div
                 key={`${section.title}-${index}`}
-                className="section-four__block"
+                className="home-section-four__block"
                 style={{ "--block-index": index }}
               >
-                <h2 className="section-four__heading">{section.title}</h2>
-                <p className="section-four__text">{section.text}</p>
+                <h2 className="home-section-four__heading">{section.title}</h2>
+                <p className="home-section-four__text">{section.text}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* RIGHT — image slices */}
-        <div className="section-four__right" ref={rightRef}>
-          <div className="section-four__image-stack">
+        <div className="home-section-four__right" ref={rightRef}>
+          <div className="home-section-four__image-stack">
             {["top", "middle", "bottom"].map((pos, i) => (
               <div
                 key={pos}
-                className={`section-four__slice section-four__slice--${pos}`}
+                className={`home-section-four__slice home-section-four__slice--${pos}`}
                 style={{ "--slice-index": i }}
               >
-                <img src={image} alt="Process" className="section-four__image" />
+                <img src={image} alt="Process" className="home-section-four__image" />
               </div>
             ))}
           </div>
@@ -86,4 +86,4 @@ function Section4({
   );
 }
 
-export default Section4;
+export default HomeSection4;

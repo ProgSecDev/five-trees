@@ -1,10 +1,10 @@
 // Sections/HomePage/Home.js
 import React from "react";
 import HomeHeader from "./homeHeader";
-import Section2 from "./Section-2";
-import Section3 from "./Section-3";
-import Section4 from "./Section-4";
-import Section5 from "./Section-5";
+import HomeSection2 from "./home-section-2";
+import HomeSection3 from "./home-section-3";
+import HomeSection4 from "./home-section-4";
+import HomeSection5 from "./home-section-5";
 import WhatsAppWidget from "../../Components/WhatsappWidget";
 
 function Home() {
@@ -12,10 +12,10 @@ function Home() {
     <main id="home">
       <section id="home">
         <HomeHeader />
-        <Section2 />
-        <Section3 />
-        <Section4 />
-        <Section5 />
+        <HomeSection2 />
+        <HomeSection3 />
+        <HomeSection4 />
+        <HomeSection5 />
         <WhatsAppWidget />
       </section>
     </main>

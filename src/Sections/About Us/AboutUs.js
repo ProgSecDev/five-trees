@@ -1,8 +1,7 @@
-// Sections/HomePage/Home.js
 import React from "react";
 import AboutHeader from "./aboutHeader";
-import Section2 from "./Section-2";
-import Section3 from "./Section-3";
+import AboutSection2 from "./about-section-2";
+import AboutSection3 from "./about-section-3";
 import Footer from "../../Components/Footer";
 import WhatsAppWidget from "../../Components/WhatsappWidget";
 
@@ -11,8 +10,8 @@ function About() {
     <main id="about">
       <section id="about">
         <AboutHeader />
-        <Section2 />
-        <Section3 />
+        <AboutSection2 />
+        <AboutSection3 />
         <Footer />
         <WhatsAppWidget />
       </section>

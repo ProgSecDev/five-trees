@@ -1,6 +1,6 @@
 // Sections/HomePage/Section-5.js
 import React, { useState } from "react";
-import "./Section-5.css";
+import "./home-section-5.css";
 import { NavLink } from "react-router-dom";
 
 import product1 from "../../assets/HomePage/Section5-Card1.png";
@@ -13,7 +13,7 @@ const products = [
   { id: 3, title: "Traditional\nCypriot PDO Cheese", image: product3, link: "/product#traditional" },
 ];
 
-function Section5({ items = products }) {
+function HomeSection5({ items = products }) {
   const [activeIndex, setActiveIndex] = useState(1);
 
   const goPrev = () => {
@@ -36,34 +36,34 @@ function Section5({ items = products }) {
   };
 
   return (
-    <section className="section-five" id="products-slider">
-      <div className="section-five__container">
+    <section className="home-section-five" id="products-slider">
+      <div className="home-section-five__container">
         <button
           type="button"
-          className="section-five__arrow section-five__arrow--left"
+          className="home-section-five__arrow home-section-five__arrow--left"
           onClick={goPrev}
           aria-label="Previous product"
         >
           <span>&larr;</span>
         </button>
 
-        <div className="section-five__cards">
+        <div className="home-section-five__cards">
           {getVisibleCards().map((item) => (
             <article
               key={`${item.id}-${item.position}`}
-              className={`section-five__card section-five__card--${item.position}`}
+              className={`home-section-five__card home-section-five__card--${item.position}`}
             >
-              <div className="section-five__image-wrap">
+              <div className="home-section-five__image-wrap">
                 <img
                   src={item.image}
                   alt={item.title.replace("\n", " ")}
-                  className="section-five__image"
+                  className="home-section-five__image"
                 />
               </div>
 
-              <div className="section-five__label">
-                 <NavLink to={item.link} className="section-five__title-link">
-    <h3 className="section-five__title">
+              <div className="home-section-five__label">
+                 <NavLink to={item.link} className="home-section-five__title-link">
+    <h3 className="home-section-five__title">
       {item.title.split("\n").map((line, index, arr) => (
         <React.Fragment key={`${item.id}-${index}`}>
           {line}
@@ -79,7 +79,7 @@ function Section5({ items = products }) {
 
         <button
           type="button"
-          className="section-five__arrow section-five__arrow--right"
+          className="home-section-five__arrow home-section-five__arrow--right"
           onClick={goNext}
           aria-label="Next product"
         >
@@ -87,13 +87,13 @@ function Section5({ items = products }) {
         </button>
       </div>
 
-      <div className="section-five__dots">
+      <div className="home-section-five__dots">
         {items.map((_, index) => (
           <button
             key={index}
             type="button"
-            className={`section-five__dot ${
-              index === activeIndex ? "section-five__dot--active" : ""
+            className={`home-section-five__dot ${
+              index === activeIndex ? "home-section-five__dot--active" : ""
             }`}
             onClick={() => setActiveIndex(index)}
             aria-label={`Go to product ${index + 1}`}
@@ -104,4 +104,4 @@ function Section5({ items = products }) {
   );
 }
 
-export default Section5;
+export default HomeSection5;

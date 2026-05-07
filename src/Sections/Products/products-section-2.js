@@ -1,6 +1,6 @@
 // src/Sections/Products/Section-2.js
 import React from "react";
-import "./Section-2.css";
+import "./products-section-2.css";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { scrollToHash } from "../../utils/scrollToHash";
@@ -41,12 +41,12 @@ const traditionalProducts = [
 
 function ProductCard({ image, title, subtitle }) {
   return (
-    <article className="section2__card">
-      <div className="section2__card-image-wrap">
-        <img src={image} alt={`${title} ${subtitle}`.trim()} className="section2__card-image" />
+    <article className="products-section2__card">
+      <div className="products-section2__card-image-wrap">
+        <img src={image} alt={`${title} ${subtitle}`.trim()} className="products-section2__card-image" />
       </div>
 
-      <h3 className="section2__card-title">
+      <h3 className="products-section2__card-title">
         <span>{title}</span>
         {subtitle ? <span>{subtitle}</span> : null}
       </h3>
@@ -62,18 +62,18 @@ export default function Section2() {
   }, [hash]);
 
   return (
-    <section className="section2">
-      <div className="section2__container">
-        <header className="section2__header">
-          <img src={sectionLogo} alt="" className="section2__logo" aria-hidden="true" />
-          <h2 className="section2__heading">OUR PRODUCTS</h2>
+    <section className="products-section2">
+      <div className="products-section2__container">
+        <header className="products-section2__header">
+          <img src={sectionLogo} alt="" className="products-section2__logo" aria-hidden="true" />
+          <h2 className="products-section2__heading">OUR PRODUCTS</h2>
         </header>
 
-        <section className="section2__group section2__group--authentic" id="authentic">
-  <div className="section2__label">AUTHENTIC - PDO</div>
+        <section className="products-section2__group products-section2__group--authentic" id="authentic">
+  <div className="products-section2__label">AUTHENTIC - PDO</div>
 
   {/* Single container — CSS handles columns at every breakpoint */}
-  <div className="section2__grid section2__grid--authentic-all">
+  <div className="products-section2__grid products-section2__grid--authentic-all">
     {authenticProducts.map((product) => (
       <ProductCard key={product.id} {...product} />
     ))}
@@ -83,14 +83,14 @@ export default function Section2() {
     src={authenticChili}
     alt=""
     aria-hidden="true"
-    className="section2__decor section2__decor--chili"
+    className="products-section2__decor section2__decor--chili"
   />
 </section>
 
-       <section className="section2__group section2__group--traditional" id="traditional">
-  <div className="section2__label">Traditional Cypriot PDO Cheese</div>
+       <section className="products-section2__group products-section2__group--traditional" id="traditional">
+  <div className="products-section2__label">Traditional Cypriot PDO Cheese</div>
 
-  <div className="section2__grid section2__grid--traditional-all">
+  <div className="products-section2__grid products-section2__grid--traditional-all">
     {traditionalProducts.map((product) => (
       <ProductCard key={product.id} {...product} />
     ))}
@@ -100,7 +100,7 @@ export default function Section2() {
     src={traditionalDecor}
     alt=""
     aria-hidden="true"
-    className="section2__decor section2__decor--halloumi"
+    className="products-section2__decor products-section2__decor--halloumi"
   />
 </section>
       </div>

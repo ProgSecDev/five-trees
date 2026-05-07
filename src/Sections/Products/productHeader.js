@@ -5,7 +5,7 @@ import mintHerb from "../../assets/ProductsPage/green-herb-img.png";
 import { NavLink } from "react-router-dom";
 
 export default function ProductHeader({
-  overlayOpacity = 0.05
+  overlayOpacity = 0
 }) {
   return (
     <div className="product-page">
@@ -15,13 +15,16 @@ export default function ProductHeader({
       >
         <div className="hero-overlay" style={{ backgroundColor: `rgba(255, 255, 255, ${overlayOpacity})` }} />
 
+        <div className="hero-content__overlay">
         <main className="hero-content animate-hero">
-          <h1 className="hero-title">YOUR BRAND...OUR HALLOUMI</h1>
-          <h1 className="hero-title">PRIVATE LABEL & GCC DISTRIBUTION</h1>
+          <div className="hero-content__title-bar">
+          <h1 className="hero-title">YOUR BRAND...OUR HALLOUMI <br /> PRIVATE LABEL & GCC DISTRIBUTION</h1>
+          </div>
           <NavLink to="/contact" className="product-header__button">
             Start Today
           </NavLink>
         </main>
+        </div>
 
         <img src={mintHerb} alt="" className="hero-mint" aria-hidden="true" />
       </section>

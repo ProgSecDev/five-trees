@@ -1,7 +1,6 @@
-/* Sections/HomePage/Section-5.css */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700;800&display=swap");
 
-.section-five {
+.home-section-five {
   width: 100%;
   background: #fff;
   padding: 54px 32px 44px;
@@ -9,7 +8,7 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.section-five__container {
+.home-section-five__container {
   max-width: 1520px;
   margin: 0 auto;
   display: grid;
@@ -18,7 +17,7 @@
   column-gap: 18px;
 }
 
-.section-five__cards {
+.home-section-five__cards {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -26,7 +25,7 @@
   min-height: 620px;
 }
 
-.section-five__card {
+.home-section-five__card {
   position: relative;
   border-radius: 38px;
   background: #ffffff;
@@ -35,21 +34,21 @@
   transition: all 0.25s ease;
 }
 
-.section-five__card--left,
-.section-five__card--right {
+.home-section-five__card--left,
+.home-section-five__card--right {
   width: 300px;
   height: 478px;
   margin-top: 78px;
 }
 
-.section-five__card--center {
+.home-section-five__card--center {
   width: 352px;
   height: 554px;
   margin-top: 0;
   background: #657f2b;
 }
 
-.section-five__image-wrap {
+.shome-ection-five__image-wrap {
   width: calc(100% - 28px);
   margin: 18px auto 0;
   border-radius: 30px;
@@ -57,16 +56,16 @@
   background: #ddd;
 }
 
-.section-five__card--left .section-five__image-wrap,
-.section-five__card--right .section-five__image-wrap {
+.home-section-five__card--left .home-section-five__image-wrap,
+.home-section-five__card--right .home-section-five__image-wrap {
   height: 270px;
 }
 
-.section-five__card--center .section-five__image-wrap {
+.home-section-five__card--center .home-section-five__image-wrap {
   height: 294px;
 }
 
-.section-five__image {
+.home-section-five__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -74,7 +73,7 @@
   border-radius: 30px;
 }
 
-.section-five__label {
+.home-section-five__label {
   position: absolute;
   left: 50%;
   bottom: 20px;
@@ -91,17 +90,17 @@
   box-sizing: border-box;
 }
 
-.section-five__card--left .section-five__label,
-.section-five__card--right .section-five__label {
+.home-section-five__card--left .home-section-five__label,
+.home-section-five__card--right .home-section-five__label {
   min-height: 192px;
 }
 
-.section-five__card--center .section-five__label {
+.home-section-five__card--center .home-section-five__label {
   min-height: 200px;
   width: 80%;
 }
 
-.section-five__title {
+.home-section-five__title {
   margin: 0;
   color: #5f7429;
   font-size: 1.05rem;
@@ -112,11 +111,11 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.section-five__card--center .section-five__title {
+.home-section-five__card--center .home-section-five__title {
   font-size: 1.1rem;
 }
 
-.section-five__arrow {
+.home-section-five__arrow {
   width: 72px;
   height: 72px;
   border: 3px solid #657f2b;
@@ -131,18 +130,18 @@
   margin: 0 auto;
 }
 
-.section-five__arrow:hover {
+.home-section-five__arrow:hover {
   transform: scale(1.04);
 }
 
-.section-five__arrow span {
+.home-section-five__arrow span {
   font-size: 2.3rem;
   line-height: 1;
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
 }
 
-.section-five__dots {
+.home-section-five__dots {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,7 +149,7 @@
   margin-top: 26px;
 }
 
-.section-five__dot {
+.home-section-five__dot {
   width: 24px;
   height: 24px;
   border: 2px solid #657f2b;
@@ -160,56 +159,56 @@
   padding: 0;
 }
 
-.section-five__dot--active {
+.home-section-five__dot--active {
   background: #657f2b;
 }
 
 @media (max-width: 1200px) {
-  .section-five__container {
+  .home-section-five__container {
     grid-template-columns: 72px 1fr 72px;
     column-gap: 14px;
   }
 
-  .section-five__cards {
+  .home-section-five__cards {
     gap: 34px;
   }
 
-  .section-five__card--left,
-  .section-five__card--right {
+  .home-section-five__card--left,
+  .home-section-five__card--right {
     width: 250px;
     height: 430px;
     margin-top: 58px;
   }
 
-  .section-five__card--center {
+  .home-section-five__card--center {
     width: 300px;
     height: 500px;
   }
 
-  .section-five__card--left .section-five__image-wrap,
-  .section-five__card--right .section-five__image-wrap {
+  .home-section-five__card--left .home-section-five__image-wrap,
+  .home-section-five__card--right .home-section-five__image-wrap {
     height: 230px;
   }
 
-  .section-five__card--center .section-five__image-wrap {
+  .home-section-five__card--center .home-section-five__image-wrap {
     height: 260px;
   }
 
-  .section-five__label {
+  .home-section-five__label {
     min-height: 165px;
   }
 
-  .section-five__arrow {
+  .home-section-five__arrow {
     width: 58px;
     height: 58px;
   }
 
-  .section-five__arrow span {
+  .home-section-five__arrow span {
     font-size: 1.9rem;
   }
 
-  .section-five__arrow--left,
-  .section-five__arrow--right {
+  .home-section-five__arrow--left,
+  .home-section-five__arrow--right {
     justify-self: center;
     align-self: center;
     order: unset;
@@ -218,47 +217,47 @@
 }
 
 @media (max-width: 900px) {
-  .section-five {
+  .home-section-five {
     padding: 40px 16px 36px;
   }
 
-  .section-five__container {
+  .home-section-five__container {
     grid-template-columns: 52px minmax(0, 1fr) 52px;
     column-gap: 10px;
     align-items: center;
   }
 
-  .section-five__cards {
+  .home-section-five__cards {
     order: unset;
     gap: 0;
     min-height: auto;
     justify-content: center;
   }
 
-  .section-five__card--left,
-  .section-five__card--right {
+  .home-section-five__card--left,
+  .home-section-five__card--right {
     display: none;
   }
 
-  .section-five__card--center {
+  .home-section-five__card--center {
     width: 320px;
     max-width: 100%;
     height: 510px;
     margin: 0 auto;
   }
 
-  .section-five__arrow {
+  .home-section-five__arrow {
     width: 52px;
     height: 52px;
     margin: 0;
   }
 
-  .section-five__arrow span {
+  .home-section-five__arrow span {
     font-size: 1.7rem;
   }
 
-  .section-five__arrow--left,
-  .section-five__arrow--right {
+  .home-section-five__arrow--left,
+  .home-section-five__arrow--right {
     justify-self: center;
     align-self: center;
     order: unset;
@@ -267,33 +266,33 @@
 }
 
 @media (max-width: 576px) {
-  .section-five__container {
+  .home-section-five__container {
     grid-template-columns: 44px minmax(0, 1fr) 44px;
     column-gap: 8px;
   }
 
-  .section-five__card--center {
+  .home-section-five__card--center {
     width: 100%;
     max-width: 290px;
     height: 470px;
   }
 
-  .section-five__arrow {
+  .home-section-five__arrow {
     width: 44px;
     height: 44px;
     border-width: 2px;
   }
 
-  .section-five__arrow span {
+  .home-section-five__arrow span {
     font-size: 1.4rem;
   }
 
-  .section-five__dots {
+  .home-section-five__dots {
     gap: 10px;
     margin-top: 20px;
   }
 
-  .section-five__dot {
+  .home-section-five__dot {
     width: 16px;
     height: 16px;
   }

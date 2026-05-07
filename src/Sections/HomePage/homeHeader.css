@@ -56,21 +56,6 @@
   background: #5d7128;
 }
 
-.home-header__nav-link {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  font-family: "SairaCondensedBold", sans-serif;
-}
-
-.home-header__nav-link.is-active {
-  color: #c7d86b;
-}
-
 /* Logo: no longer absolutely positioned */
 .home-header__logo-wrap {
   width: fit-content;

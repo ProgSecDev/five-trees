@@ -1,38 +1,37 @@
-// src/Sections/Section-2.js
 import React from "react";
-import "./Section-2.css";
+import "./about-section-2.css";
 import stackedCheeseImage from "../../assets/About US/stacked-cheese.png";
 import grilledHalloumiImage from "../../assets/About US/grilled-halloumi-circle.png";
 
 function Section2() {
   return (
-    <section className="section-2">
-      <div className="section-2__top-image-wrap" aria-hidden="true">
+    <section className="about-section-2">
+      <div className="about-section-2__top-image-wrap" aria-hidden="true">
         <img
           src={stackedCheeseImage}
           alt=""
-          className="section-2__top-image"
+          className="about-section-2__top-image"
         />
       </div>
 
-      <div className="section-2__content">
-        <div className="section-2__left">
-          <div className="section-2__circle-frame">
-            <div className="section-2__circle-inner">
+      <div className="about-section-2__content">
+        <div className="about-section-2__left">
+          <div className="about-section-2__circle-frame">
+            <div className="about-section-2__circle-inner">
               <img
                 src={grilledHalloumiImage}
                 alt="Grilled halloumi"
-                className="section-2__circle-image"
+                className="about-section-2__circle-image"
               />
             </div>
           </div>
         </div>
 
-        <div className="section-2__right">
-          <div className="section-2__mission-icon" aria-hidden="true">
+        <div className="about-section-2__right">
+          <div className="about-section-2__mission-icon" aria-hidden="true">
             <svg
               viewBox="0 0 72 72"
-              className="section-2__mission-svg"
+              className="about-section-2__mission-svg"
               fill="none"
               stroke="#5d7128"
               strokeLinecap="round"
@@ -59,10 +58,10 @@ function Section2() {
             </svg>
           </div>
 
-          <h2 className="section-2__title">MISSION</h2>
+          <h2 className="about-section-2__title">MISSION</h2>
 
-          <div className="section-2__card">
-            <p className="section-2__text">
+          <div className="about-section-2__card">
+            <p className="about-section-2__text">
               To deliver authentic Cypriot halloumi and premium Mediterranean
               products to global markets by combining traditional craftsmanship
               with certified quality standards, ensuring consistency, trust, and
@@ -72,7 +71,6 @@ function Section2() {
         </div>
       </div>
 
-      <div className="section-2__shape" aria-hidden="true" />
     </section>
   );
 }

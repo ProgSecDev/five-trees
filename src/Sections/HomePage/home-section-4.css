@@ -22,7 +22,7 @@
   font-display: swap;
 }
 
-.section-four {
+.home-section-four {
   width: 100%;
   padding: 30px 40px 46px;
   background: #fff;
@@ -30,7 +30,7 @@
   margin-top: 3rem;
 }
 
-.section-four__container {
+.home-section-four__container {
   max-width: 1520px;
   margin: 0 auto;
   display: grid;
@@ -39,14 +39,14 @@
   align-items: start;
 }
 
-.section-four__left {
+.home-section-four__left {
   display: grid;
   grid-template-columns: 92px 1fr;
   column-gap: 28px;
   align-items: start;
 }
 
-.section-four__side-title {
+.home-section-four__side-title {
   width: 92px;
   min-height: 742px;
   background: #6a7f28;
@@ -57,7 +57,7 @@
   box-sizing: border-box;
 }
 
-.section-four__side-title span {
+.home-section-four__side-title span {
   color: #f4efd8;
   font-size: 2.5rem;
   font-weight: 900;
@@ -68,16 +68,16 @@
   font-family: "SairaCondensedBold", sans-serif;
 }
 
-.section-four__content {
+.home-section-four__content {
   padding-top: 10px;
   max-width: 770px;
 }
 
-.section-four__block + .section-four__block {
+.home-section-four__block + .home-section-four__block {
   margin-top: 72px;
 }
 
-.section-four__heading {
+.home-section-four__heading {
   margin: 0 0 12px;
   color: #bfd15f;
   font-size: 2.18rem;
@@ -100,7 +100,7 @@
   text-transform: uppercase;
 } */
 
-.section-four__text {
+.home-section-four__text {
   margin: 0;
   max-width: 760px;
   color: #5d6e2d;
@@ -111,18 +111,18 @@
   clip-path: inset(0 100% 0 0);
 }
 
-.section-four__right {
+.home-section-four__right {
   position: relative;
   min-height: 742px;
 }
 
-.section-four__image-stack {
+.home-section-four__image-stack {
   position: relative;
   width: 100%;
   height: 742px;
 }
 
-.section-four__slice {
+.home-section-four__slice {
   position: absolute;
   overflow: hidden;
   background: transparent;
@@ -133,44 +133,44 @@
 /* ── Triggered when .is-visible is added ── */
 
 /* Each block staggers via --block-index CSS var */
-.section-four__left.is-visible .section-four__heading {
+.home-section-four__left.is-visible .home-section-four__heading {
   animation: fadeLeft 0.65s cubic-bezier(0.4, 0, 0.2, 1)
     calc(0.1s + var(--block-index, 0) * 0.3s) forwards;
 }
 
-.section-four__left.is-visible .section-four__text {
+.home-section-four__left.is-visible .home-section-four__text {
   animation: typeReveal 0.9s cubic-bezier(0.4, 0, 0.2, 1)
     calc(0.4s + var(--block-index, 0) * 0.3s) forwards;
 }
 
 /* Each slice staggers via --slice-index CSS var */
-.section-four__right.is-visible .section-four__slice {
+.home-section-four__right.is-visible .home-section-four__slice {
   animation: sliceFadeLeft 0.7s cubic-bezier(0.4, 0, 0.2, 1)
     calc(0.2s + var(--slice-index, 0) * 0.2s) forwards;
 }
 
-.section-four__slice--top {
+.home-section-four__slice--top {
   top: 10px;
   right: 30px;
   width: 630px;
   height: 210px;
 }
 
-.section-four__slice--middle {
+.home-section-four__slice--middle {
   top: 244px;
   right: 80px;
   width: 630px;
   height: 210px;
 }
 
-.section-four__slice--bottom {
+.home-section-four__slice--bottom {
   top: 480px;
   right: 120px;
   width: 630px;
   height: 210px;
 }
 
-.section-four__image {
+.home-section-four__image {
   display: block;
   width: 100%;
   height: 700px;
@@ -178,83 +178,83 @@
   object-position: center center;
 }
 
-.section-four__slice--top .section-four__image {
+.home-section-four__slice--top .home-section-four__image {
   transform: translateY(0);
 }
 
-.section-four__slice--middle .section-four__image {
+.home-section-four__slice--middle .home-section-four__image {
   transform: translateY(-234px);
 }
 
-.section-four__slice--bottom .section-four__image {
+.home-section-four__slice--bottom .home-section-four__image {
   transform: translateY(-478px);
 }
 
 @media (max-width: 1380px) {
-  .section-four {
+  .home-section-four {
     padding: 28px 24px 44px;
   }
 
-  .section-four__container {
+  .home-section-four__container {
     grid-template-columns: 1fr;
     row-gap: 34px;
   }
 
-  .section-four__left {
+  .home-section-four__left {
     grid-template-columns: 82px 1fr;
   }
 
-  .section-four__side-title {
+  .home-section-four__side-title {
     width: 82px;
     min-height: 640px;
   }
 
-  .section-four__right {
+  .home-section-four__right {
     min-height: 720px;
   }
 
-  .section-four__image-stack {
+  .home-section-four__image-stack {
     max-width: 760px;
     height: 720px;
     margin: 0 auto;
   }
 
-  .section-four__slice--top {
+  .home-section-four__slice--top {
     right: 0;
     width: 560px;
   }
 
-  .section-four__slice--middle {
+  .home-section-four__slice--middle {
     right: 92px;
     width: 648px;
   }
 
-  .section-four__slice--bottom {
+  .home-section-four__slice--bottom {
     right: 118px;
     width: 560px;
   }
 }
 
 @media (max-width: 980px) {
-.section-four__image-stack {
+.home-section-four__image-stack {
     height: 520px;
   }
 
-  .section-four__slice--top {
+  .home-section-four__slice--top {
     top: 20px;
     right: 0;
     width: 84%;
     height: 180px;
   }
 
-  .section-four__slice--middle {
+  .home-section-four__slice--middle {
     top: 240px;
     right: 40px;
     width: 84%;
     height: 180px;
   }
 
-  .section-four__slice--bottom {
+  .home-section-four__slice--bottom {
     top: 460px;
     right: 80px;
     width: 84%;
@@ -263,83 +263,83 @@
 }
 
 @media (max-width: 768px) {
-  .section-four {
+  .home-section-four {
     padding: 24px 16px 36px;
   }
 
-  .section-four__left {
+  .home-section-four__left {
     grid-template-columns: 62px 1fr;
     column-gap: 16px;
   }
 
-.section-four__side-title {
+.home-section-four__side-title {
   width: 62px;
   min-height: 100%;
   padding-top: 0;           /* was: 14px */
   align-items: center;      /* add this */
 }
 
-  .section-four__side-title span {
+  .home-section-four__side-title span {
     font-size: 1.86rem;
   }
 
-  .section-four__content {
+  .home-section-four__content {
     max-width: 100%;
     padding-top: 0;
   }
 
-  .section-four__block + .section-four__block {
+  .home-section-four__block + .home-section-four__block {
     margin-top: 40px;
   }
 
-  .section-four__heading {
+  .home-section-four__heading {
     font-size: 1.7rem;
     line-height: 1.08;
   }
 
-  .section-four__text {
+  .home-section-four__text {
     font-size: 0.98rem;
     line-height: 1.42;
   }
 
-  .section-four__right {
+  .home-section-four__right {
     min-height: 520px;
   }
 
-  .section-four__image-stack {
+  .home-section-four__image-stack {
     height: 520px;
   }
 
-  .section-four__slice--top {
+  .home-section-four__slice--top {
     top: 0;
     right: 0;
     width: 85%;
     height: 140px;
   }
 
-  .section-four__slice--middle {
+  .home-section-four__slice--middle {
     top: 160px;
     right: 20px;
     width: 85%;
     height: 140px;
   }
 
-  .section-four__slice--bottom {
+  .home-section-four__slice--bottom {
     top: 320px;
     right: 40px;
     width: 85%;
     height: 140px;
   }
 
-  .section-four__image {
+  .home-section-four__image {
     height: 450px;
   }
 
-  .section-four__slice--middle .section-four__image {
+  .home-section-four__slice--middle .home-section-four__image {
     transform: translateY(-160px);
   }
 
-  .section-four__slice--bottom .section-four__image {
+  .home-section-four__slice--bottom .home-section-four__image {
     transform: translateY(-320px);
   }
 }
