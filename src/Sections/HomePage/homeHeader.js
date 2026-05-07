@@ -11,6 +11,7 @@ export default function HomeHeader({
   companyName = "FIVE TREES GLOBAL TRADING",
   subtitle = "YOUR TRUSTED SOURCE",
   buttonText = "View Products",
+  overlayOpacity = 0.15,
   onButtonClick,
 }) {
   const [animKey, setAnimKey] = useState(0);
@@ -24,7 +25,7 @@ export default function HomeHeader({
       className="home-header"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <div className="home-header__overlay">
+      <div className="home-header__overlay" style={{ backgroundColor: `rgba(255, 255, 255, ${overlayOpacity})` }}>
         <div className="home-header__logo-wrap">
           <img
             src={logoSrc}

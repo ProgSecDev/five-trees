@@ -56,12 +56,6 @@ function ProductCard({ image, title, subtitle }) {
 
 export default function Section2() {
   const { hash } = useLocation();
-  const authenticTop = authenticProducts.slice(0, 3);
-  const authenticMiddle = authenticProducts.slice(3, 6);
-  const authenticBottom = authenticProducts.slice(6);
-
-  const traditionalTop = traditionalProducts.slice(0, 3);
-  const traditionalBottom = traditionalProducts.slice(3);
 
   useEffect(() => {
     scrollToHash(hash);
