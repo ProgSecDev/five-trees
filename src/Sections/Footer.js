@@ -63,7 +63,7 @@ function Footer() {
               />
               <div className="flex justify-center">
                 <button className="border-orange-500 border text-white hover:bg-orange-700 py-2 px-4 rounded-md shadow-md transition duration-300">
-                  SEND MESSAGE
+                  SUBMIT
                 </button>
               </div>
             </form>

@@ -1,6 +1,6 @@
 import React from "react";
 import MediaHeader from "./mediaHeader";
-import Section2 from "./Section-2";
+import MediaSection2 from "./media-section-2";
 import Footer from "../../Components/Footer";
 import WhatsAppWidget from "../../Components/WhatsappWidget";
 
@@ -9,7 +9,7 @@ function Media() {
     <main id="media">
       <section id="media">
         <MediaHeader />
-        <Section2 />
+        <MediaSection2 />
         <Footer />
         <WhatsAppWidget />
       </section>
