@@ -294,3 +294,11 @@
     height: 16px;
   }
 }
+
+.media-section-2__card--clickable {
+  cursor: pointer;
+}
+
+.media-section-2__card--clickable:hover {
+  transform: translateY(-4px);
+}

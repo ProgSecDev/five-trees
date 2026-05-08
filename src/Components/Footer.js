@@ -226,7 +226,7 @@ function Footer() {
                 rows="7"
               />
               <button type="submit" className="footer__submit-btn">
-                SEND MESSAGE
+                SUBMIT
               </button>
             </form>
 
