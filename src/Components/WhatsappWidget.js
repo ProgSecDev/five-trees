@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import WhatsAppIcon from "../../src/assets/Whatsapp/whatsapp.png";
 
 export default function WhatsAppWidget({
-  phone = "+35797499995",
+  phone = "+35797499994",
   message = "Hello! I would like to know more.",
   position = "right",
 }) {
