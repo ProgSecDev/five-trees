@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import dessertPlate from "../../src/assets/Footer/footer-plate.png";
 import qrCode from "../../src/assets/Footer/QR-Code.png";
 import './Footer.css';
@@ -139,6 +139,9 @@ function LinkedinIcon() {
 }
 
 function Footer() {
+  const formRef = useRef(null);
+  const [status, setStatus] = useState({ sending: false, message: "" });
+
   const contactItems = [
     {
       icon: <LocationIcon />,
@@ -170,6 +173,39 @@ function Footer() {
     },
   ];
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (status.sending) return;
+
+    setStatus({ sending: true, message: "" });
+
+    const formData = new FormData(formRef.current);
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+    formData.append("subject", `New inquiry from ${formData.get("name")}`);
+    formData.append("from_name", "Five Trees Website");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+      if (!data.success) throw new Error(data.message || "Send failed");
+
+      setStatus({ sending: false, message: "Message sent! We'll be in touch soon." });
+      formRef.current.reset();
+
+      // Auto-dismiss success message after 5 seconds
+      setTimeout(() => setStatus({ sending: false, message: "" }), 5000);
+    } catch (err) {
+      setStatus({
+        sending: false,
+        message: "Failed to send. Please try again or email us directly.",
+      });
+    }
+  };
+
   return (
     <>
       <footer className="footer" id="footer">
@@ -187,7 +223,6 @@ function Footer() {
                 );
 
                 return item.href ? (
-
                   <a
                     key={index}
                     href={item.href}
@@ -217,17 +252,58 @@ function Footer() {
           <div className="footer__right">
             <h2 className="footer__right-title">GET IN TOUCH</h2>
 
-            <form className="footer__form">
-              <input type="text" placeholder="YOUR NAME" className="footer__input" />
-              <input type="email" placeholder="YOUR EMAIL" className="footer__input" />
+            <form ref={formRef} className="footer__form" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="name"
+                placeholder="YOUR NAME"
+                className="footer__input"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="YOUR EMAIL"
+                className="footer__input"
+                required
+              />
               <textarea
+                name="message"
                 placeholder="TYPING YOUR MESSAGE HERE"
                 className="footer__textarea"
                 rows="7"
+                required
               />
-              <button type="submit" className="footer__submit-btn">
-                SUBMIT
+
+              {/* Honeypot — invisible to humans, traps bots */}
+              <input
+                type="checkbox"
+                name="botcheck"
+                tabIndex="-1"
+                autoComplete="off"
+                style={{ display: "none" }}
+                aria-hidden="true"
+              />
+
+              <button
+                type="submit"
+                className="footer__submit-btn"
+                disabled={status.sending}
+              >
+                {status.sending ? "SENDING..." : "SUBMIT"}
               </button>
+
+              {status.message && (
+                <p
+                  className={`footer__form-status ${
+                    status.message.includes("Failed")
+                      ? "footer__form-status--error"
+                      : "footer__form-status--success"
+                  }`}
+                >
+                  {status.message}
+                </p>
+              )}
             </form>
 
             <img src={dessertPlate} alt="Dessert plate" className="footer__plate-image" />
