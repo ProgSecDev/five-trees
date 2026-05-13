@@ -180,7 +180,7 @@ function Footer() {
     setStatus({ sending: true, message: "" });
 
     const formData = new FormData(formRef.current);
-    formData.append("access_key", import.meta.env.REACT_APP_WEB3FORMS_ACCESS_KEY);
+    formData.append("access_key", process.env.REACT_APP_WEB3FORMS_ACCESS_KEY);
     formData.append("subject", `New inquiry from ${formData.get("name")}`);
     formData.append("from_name", "Five Trees Website");
 
